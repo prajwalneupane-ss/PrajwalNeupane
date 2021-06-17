@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prajwal Neupane</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section id="home">
+    
+        <div class="navbar">
+            
+    
+            <div class="navmenu">
+                <ul>
+                    <li><a href="#home" class=" home active">HOME</a></li>
+                    <li><a href="#about" class="about">ABOUT</a></li>
+                    <li><a href="#contact" class="contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="photo">
+            <div class="photonbar">
+            <img src="profile.jpg" alt="Prajwal Neupane" id="photo">
+            <div class="bar">
+                <div class="iam">
+                    <div class="text1">Hi, I am <br>Prajwal Neupane</div>
+                </div>
+                <div class="iam2">
+                    <div class="text2">FRONT-END DEVELOPER</div>
+                    
+                    
+                </div>
+            </div>
+            </div>
+            <div class="scrolldwn">
+                <ul>
+                    
+                    <li><a href="#about"><i id="icon3" class="fa  fa-chevron-down"></i></a></li>
+                </ul>
+    
+            </div>
+
+            <div class="socialmedia">
+                <ul>
+                    <li><a href="https://www.facebook.com/prajwal.neupane.29" target="_blank"><i id="icon3" class="fa  fa-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/_prajwal_neupane_" target="_blank"><i id="icon2" class="fa  fa-instagram"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCUBku9mUm9oxjgKEnb38UJg" target="_blank"><i id="icon1" class="fa  fa-youtube-play"></i></a></li>
+                </ul>
+            </div>
+
+
+        </div>
+
+        
+        </section>
+        <section id="about">
+            <div class="whole">
+                <div class="pnt">
+                    <div class="aboutphoto">
+                        <img src="pp.jpg" alt="Prajwal Neupane">
+                    </div>
+                    <div class="abouttext">
+                        <div class="alltext">
+                        <h1>ABOUT ME</h1>
+                        <strong></strong><h3>"An investment in knowledge pays the best interest."</h3></strong>
+                        <p>I’m a professional FRONT-END Developer with experience of translating complex ideas into slick, successful campaigns. Many clients have procured exceptional results and happiness while working with me.<br><br>
+
+                            Delivering work within time and budget which meets the client’s requirements is my motto.<br><br>
+                            
+                            Wondering the unsolved mysteries of the universe & possibilities of life in mars, Interestingly, I’m really good at imagining things once I start to.</p>
+
+                   </div>
+                   <div class="threediv">
+                       <div class="one"><span class="largetext">3+</span>Years of experience</div>
+                       <div class="one"><span class="largetext">More</span>Happy Clients</div>
+                       <div class="one"><div class="largetext">30+</div>Projects Done</div>
+                   </div>
+
+                   <div class="buttonbox">
+                       <div class="btn">
+                       <a href="CV.pdf" target="_blank">View my CV</a>
+                       </div>
+                   </div>
+                        </div>
+                    
+                </div>
+               
+            </div>
+        </section>
+    </section>
+    <section id="contact">
+        
+        
+        <div class="whole2">
+
+            <div class="largecontact">
+               <h1> CONTACT ME </h1>
+            </div>
+            
+            <div class="contact1">
+                <div class="mail">
+                    <ul>
+                        <li><a ><i  class="fa  fa-map-marker"></i></a><div class="addet">Banasthali, Kathmandu, Nepal</div></li>
+                        <li><a ><i  class="fa  fa-envelope"></i></a><div class="addet">prajwalneupane01@gmail.com</div></li>
+                        <li><a ><i  class="fa  fa-phone"></i></a><div class="addet">+977-9867816055</div></li>
+                    </ul>
+                </div>
+               
+                <div class="follow">
+                   <div class="list">
+                    <ul>
+                        <li><a href="https://www.facebook.com/prajwal.neupane.29" target="_blank"><i id="icon3" class="fa  fa-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/_prajwal_neupane_" target="_blank"><i id="icon2" class="fa  fa-instagram"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCUBku9mUm9oxjgKEnb38UJg" target="_blank"><i id="icon1" class="fa  fa-youtube-play"></i></a></li>
+                    </ul>
+                       
+                   </div>
+                </div>
+            </div>
+            </div>
+       
+</div>
+  
+
+
+    </section>
+
+    <section class="footer">
+        <h3>Copyright © 2021, Prajwal Neupane. All Rights Reserved.</h3>
+    </section>
+   
+
+
+
+
+      
+
+      
+       <script>
+           
+
+           const sections = document.querySelectorAll("section");
+const navLi = document.querySelectorAll(".navmenu ul li a");
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLi.forEach((a) => {
+    a.classList.remove("active");
+    if (a.classList.contains(current)) {
+      a.classList.add("active");
+    }
+  });
+});
+
+
+
+
+
+        
+         
+       </script>
+    
+</body>
+</html>
+
