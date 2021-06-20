@@ -1,14 +1,23 @@
             
 :root{
-    --blueviolet : #7a1288;
-    --dark : #5a1461;
-    transition: 10s ease;
-    --pageone : #78158534;
-
+    --semidark : rgb(214, 213, 213);
+    --alidark : rgb(126, 123, 123);
+    --black : #000;
+    --white : #fff;
+    --dheraidark : rgb(32, 32, 32);
+    --page1 : rgb(56, 56, 56);
+    --page2 : rgb(34, 32, 32);
+    --card : rgb(26, 26, 26);
+    
 
     
     
 }
+
+
+
+
+
 
 
 
@@ -16,13 +25,12 @@
     position: fixed;
     top: 200px;
     right: 50px;
-    display: flex;
-    flex-direction: column-reverse;
     
     
 }
-.theme i{
-    color: var(--blueviolet);
+.icon{
+    color: var(--semidark);
+    
     
 }
 
@@ -36,7 +44,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-direction: column-reverse;
+    flex-direction: column;
   
     
     
@@ -48,6 +56,7 @@
     width: 30px;
     border-radius: 50%;
     cursor: pointer;
+    display: none;
     
 
 }
@@ -57,6 +66,7 @@
     width: 30px;
     border-radius: 50%;
     cursor: pointer;
+    display: none;
     
 
 }
@@ -66,6 +76,7 @@
     width: 30px;
     border-radius: 50%;
     cursor: pointer;
+    display: none;
     
 
 }
@@ -75,26 +86,13 @@
     width: 30px;
     border-radius: 50%;
     cursor: pointer;
+    display: none;
     
 
 }
 
 .col5{
-    background-color: #202020;
-    height: 40px;
-    width: 70px;
-    border-radius: 10px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.5s ease;
-    border: 2px solid rgb(0, 0, 0);
-    
-
-}
-.col6{
-    background-color: #000000;
+    background-color: #ffffff;
     height: 30px;
     width: 30px;
     border-radius: 50%;
@@ -103,20 +101,31 @@
     
 
 }
+.col6{
+    background-color: #ffffff;
+    height: 40px;
+    width: 70px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease;
+    border: 2px solid rgb(255, 255, 255);
 
-#moon{
-    color: white;
+}
+
+#sun{
+    color: black;
     font-size: 25px;
 }
 
-
-
-.col5:hover{
-    background-color: white;
-    border: -5px solid black;
+.col6:hover{
+    background-color: rgb(0, 0, 0);
+    border: -5px solid rgb(255, 255, 255);
 }
-.col5:hover #moon{
-    color: black;
+.col6:hover #sun{
+    color: white;
 }
 
 
@@ -151,7 +160,7 @@ html {
 
 ::-webkit-scrollbar-thumb {
     
-    background: --var(#8a2be2);
+    background: var(--semidark);
 }
 
 #home{
@@ -174,11 +183,11 @@ html {
 
 .logo{
     text-decoration: none;
-    color: var(--blueviolet);
+    color: var(--dheraidark);
     font-family: 'Righteous', cursive;
 }
 .navbar{
-    background-color: rgb(233, 233, 233);
+    background-color: var(--dheraidark);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -188,12 +197,12 @@ html {
     z-index: 6;
     transition: 0.5s ease;
     
-    box-shadow: 5px 5px 1000px 1px var(--blueviolet);
+    box-shadow: 5px 5px 1000px 1px var(--semidark);
     
 }
 
 .logo{
-    color: var(--blueviolet);
+    color: var(--semidark);
     font-weight: 900;
     margin-left: 100px;
     font-size: 2rem;
@@ -206,7 +215,7 @@ html {
     display: flex;
     flex-direction: row;
     margin-right: 100px;
-    
+    transition: 0.5s ease;
     
 
 }
@@ -214,21 +223,17 @@ html {
 .navitems ul li{
     list-style: none;
     padding: 5px;
-    transition: 0.5s ease;
     
     
 
 }
 
 .navitems ul li a{
-    color: rgb(112, 110, 114);
+    color: var(--semidark);
     text-decoration: none;
     padding: 10px;
     font-weight: 900;
     transition: 0.5s ease;
-    border-left: 0;
-    border-top: 0;
-    border-width: 5px;
     border-radius: 8px;
     border: 2px solid rgba(255, 255, 255, 0);
     
@@ -237,16 +242,16 @@ html {
    
 }
 .navitems ul li a:hover{
-    color: var(--blueviolet);
-    border: 2px solid var(--blueviolet);
+    color: var(--semidark);
+    border: 2px solid var(--semidark);
    
   
 }
 
 .navitems ul li a.active{
-    color: var(--blueviolet);
-    border: 4px solid var(--blueviolet);
-  
+    color: var(--semidark);
+    border: 4px solid var(--semidark);
+   
   
 }
 
@@ -254,16 +259,20 @@ html {
     position: absolute;
     right: 50px;
     z-index: 100000;
-    color:white ;
+    color:var(--semidark);
     display: none;
     
 }
 
 .menubar i{
-    color: var(--blueviolet);
+    color: var(--semidark);
     cursor: pointer;
-    color: white;
     
+    
+}
+
+#menubar2{
+    color: white;
 }
 
 .sidenav{
@@ -273,11 +282,12 @@ html {
     justify-content: center;
     height: 100vh;
     width: 200px;
-    background-color: var(--blueviolet);
+    background-color: var(--dheraidark);
     right: -200px;
     top: 0;
     transition: 0.5s ease;
     opacity: 0.8;
+    
     
 }
 .sidenav ul li{
@@ -287,7 +297,7 @@ html {
 
 .sidenav ul li a{
     text-decoration: none;
-    color: white;
+    color: var(--semidark);
     font-weight: bolder;
     
 }
@@ -296,7 +306,7 @@ html {
 
     height: 100vh;
     width: 100%;
-    
+    background-color: var(--dheraidark);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -339,19 +349,19 @@ html {
 }
 
 .maintext h2{
-    color: var(--blueviolet);
+    color: var(--semidark);
     font-size: 35px;
 
 }
 .maintext h1{
-    color: rgb(43, 41, 41);
+    color: var(--semidark);
     font-weight: bolder;
     font-size: 50px;
     font-family: 'Righteous', cursive;
     
 }
 .maintext h4{
-    color: rgb(77, 70, 70);
+    color: var(--semidark);
     font-size: 20px;
     
 }
@@ -366,22 +376,23 @@ html {
 }
 .maintext a{ 
     text-decoration: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-weight: bolder;
-    background-color: var(--blueviolet);
+    background-color: var(--semidark
+    );
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 35px;
     padding-right: 35px;
     border-radius: 30px;
-    border: 2px solid var(--blueviolet); 
+    border: 2px solid var(--semidark); 
     transition: 0.5s ease;
     
 }
 
 .maintext a:hover{
-    color: var(--blueviolet);
-    background-color: white;
+    color: white;
+    background-color: var(--dheraidark);
 }
 
 .socialmedia{
@@ -413,7 +424,7 @@ html {
     width: 40px;
     height: 40px;
     font-size: 12px;
-    color: rgba(0, 0, 0, 0.192);
+    color: rgba(231, 227, 227, 0.856);
     text-decoration: none;
     z-index: 1;
     
@@ -470,7 +481,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(228, 228, 228);
+    background-color: var(--page1);
     
     
     
@@ -480,7 +491,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(236, 236, 236);
+    background-color: var(--page2);
     
     
     
@@ -513,11 +524,11 @@ html {
     font-size: 40px;
     font-weight: bolder;
     font-family: 'Righteous', cursive;
-    color: var(--blueviolet);
+    color: var(--semidark);
 }
 
 .medium1 p{
-    color: var(--dark);
+    color: var(--semidark);
     font-weight: bolder;
     font-size: 20px;
 }
@@ -595,10 +606,10 @@ html {
     
 }
 .detail1 i{
-    color: var(--blueviolet);
+    color: var(--dheraidark);
 }
 .detail i{
-    color: var(--blueviolet);
+    color: var(--dheraidark);
 }
 
 
@@ -640,10 +651,6 @@ html {
 
 
 
-
-
-
-
 .skill-bars .bar{
     margin: 20px 0;
   }
@@ -658,7 +665,7 @@ html {
     font-size: 17px;
     opacity: 1;
     animation: showText 0.5s 1s linear forwards;
-    color: var(--blueviolet);
+    color: var(--semidark);
     font-weight: bolder;
   }
   @keyframes showText {
@@ -669,13 +676,13 @@ html {
   .skill-bars .bar .progress-line{
     height: 10px;
     width: 100%;
-    background: #f0f0f0;
+    background: var(--dheraidark);
     position: relative;
     transform: scaleX(0);
     transform-origin: left;
     border-radius: 10px;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.897),
-                0 1px rgba(255,255,255,0.8);
+    box-shadow: inset 0 1px 1px rgb(0, 0, 0),
+                0 1px rgba(0, 0, 0, 0.8);
     animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
   }
   @keyframes animate {
@@ -689,7 +696,7 @@ html {
     border-radius: 10px;
     transform: scaleX(0);
     transform-origin: left;
-    background: var(--blueviolet);
+    background: var(--semidark);
     animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
   }
   .bar .progress-line.html span{
@@ -759,7 +766,7 @@ html {
   
   ::selection{
     color: #fff;
-    background: var(--blueviolet);
+    background: var(--dheraidark);
   }
 
 
@@ -819,7 +826,7 @@ html {
 .service{
     width: 27%;
     height: 100%;
-    background-color: white;
+    background-color: var(--card);
    
     align-items: center;
     text-align: center;
@@ -839,18 +846,18 @@ html {
     margin-top: 25px;
 }
 .icon i{
-    color: var(--blueviolet);
+    color: var(--white);
 }
 
 
 .bodytext{
     margin: 20px;
-    color: rgba(0, 0, 0, 0.555);
+    color: var(--semidark);
     font-weight: bolder;
 }
 
 .headtxt{
-    color: rgb(37, 37, 37);
+    color: white;
     font-weight: bolder;
 }
 
@@ -860,7 +867,7 @@ html {
 
 .mind{
     height: 300px;
-    background-color: var(--blueviolet);
+    background-color: var(--black);
     width: 100%;
     display: flex;
     text-align: center;
@@ -871,14 +878,14 @@ html {
 }
 .mind h1 {
     margin-top:50px;
-    color: white;
+    color: var(--semidark);
     font-size: 25px;
     font-weight: bolder;
     font-family: 'Righteous', cursive;
     
 }
 .mind p{
-    color: white;
+    color: var(--semidark);
     font-weight: bolder;
     margin-left: 50px;
     margin-right: 50px;
@@ -900,30 +907,31 @@ html {
 .mind ul li:nth-child(1) a{
     text-decoration: none;
     
-    color: var(--blueviolet);
+    color: var(--dheraidark);
     font-weight: bolder;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--semidark);
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 35px;
     padding-right: 35px;
     border-radius: 30px;
     
-    border: 2px solid var(--blueviolet); 
+    border: 2px solid var(--dheraidark); 
     transition: 0.5s ease;
     
 }
 
 .mind ul li:nth-child(1) a:hover{
     color: rgb(255, 255, 255);
-    background-color: var(--dark);
+    background-color: var(--black);
+    border: 2px solid var(--semidark);
 }
 
 .mind ul li:nth-child(2) a{
     text-decoration: none;
     color: white;
     font-weight: bolder;
-    background: var(--blueviolet);
+    background: var(--dheraidark);
 background-size: 20px;
     width: 50px;
     padding-top: 15px;
@@ -937,9 +945,8 @@ background-size: 20px;
 }
 
 .mind ul li:nth-child(2) a:hover{
-    color: var(--blueviolet);
-    background-color: rgba(255, 255, 255, 0.63);
-    border: 2px solid white; 
+    color: rgb(255, 255, 255);
+    background-color: rgba(182, 182, 182, 0.555);
 }
 
 #footer{
@@ -949,7 +956,7 @@ background-size: 20px;
 .footer{
     height: 300px;
     width: 100%;
-    background-color: var(--blueviolet);
+    background-color: var(--page1);
     display: flex;
     flex-direction: column;
     text-align: center; 
@@ -960,13 +967,13 @@ background-size: 20px;
 
 .footer h1{
     font-size: 30px;
-    color: white;
+    color: var(--semidark);
     font-weight: bolder;
     font-family: 'Righteous', cursive;
 }
 
 .footer p{
-    color: white;
+    color: var(--semidark);
     font-weight: bolder;
    
 }
@@ -975,9 +982,6 @@ background-size: 20px;
     flex-direction: row;
     text-align: center;
     margin-top: 50px;
-    margin: 0;
-    padding: 0;
-    margin-top: 40px;
 
 }
 
@@ -990,14 +994,14 @@ background-size: 20px;
     text-decoration: none;
     margin: 30px;
     transition: 0.5s ease;
-    color: var(--dark);
+    color: var(--black);
     
 }
 
 
 
 .socialmedia2 ul li a:hover{
-    color: white;
+    color: var(--white);
 
 }
 
@@ -1009,11 +1013,11 @@ background-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--dark);
+    background-color: var(--black);
 }
 
 .footerdeep h2{
-    color: white;
+    color: var(--semidark);
     font-size: 15px;
 }
 
@@ -1024,18 +1028,18 @@ background-size: 20px;
     right: 20px;
     height: 50px;
     width: 50px;
-    background-color: var(--dark);
+    background-color: var(--black);
     display: none;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     transition: 0.5s ease;
-    border: 2px solid var(--dark);
+    border: 2px solid var(--semidark);
     
 }
 
 .goup i{
-    color: white;
+    color: var(--semidark);
     transition: 0.5s ease;
 }
 
@@ -1045,11 +1049,22 @@ background-size: 20px;
 }
 
 .up:hover .goup{
-    background-color: white;
+    background-color: var(--semidark);
+    border: 2px solid var(--black);
 
 }
 .up:hover .goup i{
-    color: var(--dark);
+    color: var(--black);
+    
+}
+
+.up2 h2{
+    color: var(--semidark);
+    
+}
+
+.up2 p{
+    color: var(--semidark);
 }
 
 @media only screen and (max-width:1207px){
@@ -1196,7 +1211,7 @@ background-size: 20px;
         
     }
     
-    .up2{
+    .up{
         text-align: center;
     }
 
@@ -1206,9 +1221,6 @@ background-size: 20px;
 
     .big2{
         margin-top: 60px;
-    }
-    .socialmedia2{
-        margin-bottom: 30px;
     }
 
 }
@@ -1306,7 +1318,7 @@ background-size: 20px;
 /* Optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
     
-    background: var(--blueviolet);
+    background: var(--dheraidark);
 }
 
 @media only screen and (max-width:394px){
