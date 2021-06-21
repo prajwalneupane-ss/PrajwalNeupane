@@ -278,8 +278,8 @@ html {
     background-color: var(--blueviolet);
     right: -200px;
     top: 0;
-    transition: 0.5s ease;
-    opacity: 0.8;
+    transition: 0.3s ease;
+    opacity: 0.9;
     
 }
 .sidenav ul li{
@@ -547,14 +547,145 @@ html {
 }
 
     .skill-bars{
-        margin-top: 30px;
-        padding: 25px 30px;
+       
         width: 800px;
+        height: 350px;
         
-        transform: scale(0.8);
+        border-radius: 30px;
+        margin-top: 50px;
         
-        
+       
+       
       }
+.up2{
+    margin-top: 50px;
+}
+      
+      .up3{
+          margin-top: -20px;
+          text-align: center;
+          width: 100%;
+          height: 10%;
+          color: var(--blueviolet);
+          margin-top: 20px;
+          
+          
+      }
+      .skills-items{
+          
+          width: 100%;
+          height: 250px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 20px;
+         
+    }
+    .row1{
+        display: flex;
+        height: 33.33%;
+        width: 100%;
+        
+        text-align: center;
+        
+        
+    }
+
+    .row2{
+        display: flex;
+        
+        height: auto;
+        height: 33.33%;
+        width: 100%;
+        
+        text-align: center;
+        
+    }
+    .row3{
+        display: flex;
+        height: auto;
+        width: 100%;
+        height: 33.33%;
+        
+        text-align: center;
+        
+    }
+
+
+    .html{
+        background-color: rgb(255, 255, 255);
+        width: 70%;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        border-radius: 30px;
+        color: var(--blueviolet);
+        font-size: 20px;
+        font-weight: bolder;
+        
+        
+
+    }
+    .css{
+        background-color: rgb(255, 255, 255);
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        border-radius: 30px;
+        color: var(--blueviolet);
+        font-size: 30px;
+        font-weight: bolder;
+        
+
+        
+
+
+    }
+    .javascript{
+        background-color: rgb(255, 255, 255);
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        margin: 10px;
+        color: var(--blueviolet);
+        font-size: 15px;
+        font-weight: bolder;
+
+    }
+
+    .ps{
+        background-color: rgb(255, 255, 255);
+        width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        border-radius: 30px;
+        color: var(--blueviolet);
+        font-size: 20px;
+        font-weight: bolder;
+
+    }
+    .il{
+        background-color: rgb(255, 255, 255);
+        width: 1000%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        border-radius: 30px;
+        color: var(--blueviolet);
+        font-size: 30px;
+        font-weight: bolder;
+
+    }
 
 
 .detail{
@@ -647,125 +778,6 @@ html {
 
 
 
-
-.skill-bars .bar{
-    margin: 20px 0;
-  }
-  .skill-bars .bar:first-child{
-    margin-top: 0px;
-  }
-  .skill-bars .bar .info{
-    margin-bottom: 5px;
-  }
-  .skill-bars .bar .info span{
-    font-weight: 500;
-    font-size: 17px;
-    opacity: 1;
-    animation: showText 0.5s 1s linear forwards;
-    color: var(--blueviolet);
-    font-weight: bolder;
-  }
-  @keyframes showText {
-    100%{
-      opacity: 1;
-    }
-  }
-  .skill-bars .bar .progress-line{
-    height: 10px;
-    width: 100%;
-    background: #f0f0f0;
-    position: relative;
-    transform: scaleX(0);
-    transform-origin: left;
-    border-radius: 10px;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.897),
-                0 1px rgba(255,255,255,0.8);
-    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
-  }
-  @keyframes animate {
-    100%{
-      transform: scaleX(1);
-    }
-  }
-  .bar .progress-line span{
-    height: 100%;
-    position: absolute;
-    border-radius: 10px;
-    transform: scaleX(0);
-    transform-origin: left;
-    background: var(--blueviolet);
-    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
-  }
-  .bar .progress-line.html span{
-    width: 90%;
-  }
-  .bar .progress-line.css span{
-    width: 90%;
-  }
-  .bar .progress-line.jquery span{
-    width: 20%;
-  }
-  .bar .progress-line.python span{
-    width: 90%;
-  }
-  .bar .progress-line.mysql span{
-    width: 80%;
-  }
-  .progress-line span::before{
-    position: absolute;
-    content: "";
-    top: -10px;
-    right: 0;
-    height: 0;
-    width: 0;
-    border: 7px solid transparent;
-    border-bottom-width: 0px;
-    border-right-width: 0px;
-    border-top-color: #000;
-    opacity: 0;
-    animation: showText2 0.5s 1.5s linear forwards;
-  }
-  .progress-line span::after{
-    position: absolute;
-    top: -28px;
-    right: 0;
-    font-weight: 500;
-    background: #000;
-    color: #fff;
-    padding: 1px 8px;
-    font-size: 12px;
-    border-radius: 3px;
-    opacity: 0;
-    animation: showText2 0.5s 1.5s linear forwards;
-  }
-  @keyframes showText2 {
-    100%{
-      opacity: 1;
-    }
-  }
-  .progress-line.html span::after{
-    content: "90%";
-  }
-  .progress-line.css span::after{
-    content: "90%";
-  }
-  .progress-line.jquery span::after{
-    content: "20%";
-    
-  }
-  .progress-line.python span::after{
-    content: "90%";
-  }
-  .progress-line.mysql span::after{
-    content: "80%";
-  }
-
-
-  
-  ::selection{
-    color: #fff;
-    background: var(--blueviolet);
-  }
 
 
   .big2{
@@ -1194,9 +1206,7 @@ background-size: 20px;
 
     }
 
-    .skill-bars .bar .info span{
-        font-size: small;
-    }
+   
 
     
     .service i{
@@ -1232,9 +1242,9 @@ background-size: 20px;
         height: 40%;
     }
     .skill-bars{
-        width: 90%;
+        width: 100%;
        transform:scale(1);
-       height: 60%;
+       height: 350px;
     }
     
     .big{
@@ -1253,6 +1263,7 @@ background-size: 20px;
     
     .up2{
         text-align: center;
+
     }
 
     .big{
