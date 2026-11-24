@@ -1,447 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link id="swap" rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
-    <link rel = "icon" href = 
-"profile2.jpg" 
-        type = "image/x-icon">
-    <title>Prajwal Neupane</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prajwal Neupane</title>
+<meta name="description" content="Prajwal Neupane — personal website and home of Tackline, an applique tackdown stitch tool.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f3ee;
+    --ink: #1d1b19;
+    --muted: #6b655d;
+    --line: #ddd6cb;
+    --card: #fffdf9;
+    --accent: #c2410c;
+    --accent-ink: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151412;
+      --ink: #f1ede6;
+      --muted: #a39b90;
+      --line: #2e2b27;
+      --card: #1d1b18;
+      --accent: #f97316;
+      --accent-ink: #151412;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .wrap { width: 100%; max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 28px 0; }
+  header .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .logo {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600; font-size: 1.25rem;
+    color: var(--ink); text-decoration: none; letter-spacing: -0.01em;
+  }
+  nav a {
+    color: var(--muted); text-decoration: none; font-size: 0.95rem;
+    margin-left: 24px; transition: color .15s;
+  }
+  nav a:hover { color: var(--ink); }
+
+  .hero { padding: 72px 0 56px; }
+  .eyebrow {
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 18px;
+  }
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 400; font-size: clamp(2.6rem, 7vw, 4.5rem);
+    line-height: 1.05; letter-spacing: -0.025em; margin-bottom: 24px;
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+  .lede { font-size: 1.15rem; color: var(--muted); max-width: 560px; }
+
+  /* stitch divider */
+  .stitch {
+    height: 14px; margin: 8px 0 56px;
+    background:
+      linear-gradient(135deg, transparent 45%, var(--line) 45%, var(--line) 55%, transparent 55%) 0 0 / 14px 14px,
+      linear-gradient(45deg, transparent 45%, var(--line) 45%, var(--line) 55%, transparent 55%) 7px 0 / 14px 14px;
+    opacity: .9;
+  }
+
+  h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600; font-size: 1.6rem; letter-spacing: -0.01em; margin-bottom: 20px;
+  }
+
+  .app-card {
+    display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
+    background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+    padding: 36px; text-decoration: none; color: inherit;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s;
+  }
+  .app-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    box-shadow: 0 18px 40px -24px rgba(0,0,0,.35);
+  }
+  .app-title { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+  .app-icon {
+    width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0;
+    background: var(--accent); display: grid; place-items: center;
+  }
+  .app-icon svg { width: 30px; height: 30px; }
+  .app-name { font-family: "Fraunces", Georgia, serif; font-size: 1.7rem; font-weight: 600; }
+  .app-desc { color: var(--muted); max-width: 520px; margin-bottom: 16px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag {
+    font-size: 0.78rem; font-weight: 500; color: var(--muted);
+    border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+    background: var(--accent); color: var(--accent-ink);
+    font-weight: 600; font-size: 0.95rem;
+    padding: 14px 22px; border-radius: 999px;
+  }
+  .btn span { transition: transform .2s; }
+  .app-card:hover .btn span { transform: translateX(4px); }
+
+  .about { padding: 72px 0 24px; }
+  .about p { color: var(--muted); max-width: 620px; }
+
+  footer { margin-top: auto; padding: 48px 0 32px; }
+  footer .wrap {
+    border-top: 1px solid var(--line); padding-top: 24px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    font-size: 0.85rem; color: var(--muted);
+  }
+
+  @media (max-width: 680px) {
+    .hero { padding: 40px 0 40px; }
+    .app-card { grid-template-columns: 1fr; padding: 26px; gap: 22px; }
+    .btn { justify-self: start; }
+    nav a { margin-left: 16px; }
+  }
+</style>
 </head>
 <body>
-    <section id="home">
-      <div class="bgani">
-       
-        
-      </div>
-    <div class="navbar" id="navbar">
-        <span class="logo" id="logo"><a href="#" class="logo">Prajwal Neupane</a></span>
-        <div class="navitems">
-            <ul id="ul">
-                <li><a href="#home" class="home active" id="mm">HOME</a></li>
-                <li><a href="#about" class="about" id="mm">ABOUT</a></li>
-                <li><a href="#services" class="services" id="mm">SERVICES</a></li>
-                <li><a href="#recent" class="recent" id="mm">PORTFOLIO</a></li>
-               
-                <li><a href="#contact" class="contact" id="mm">CONTACT</a></li>
-            </ul>
-        </div>
 
-        <div class="menubar" id="menubar">
-          <i class="fa fa-2x fa-bars" id="menubar2"></i>
-        </div>
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html">Prajwal Neupane</a>
+    <nav>
+      <a href="#apps">Apps</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
 
-        <div class="sidenav" id="sidenav">
-          <ul id="ul">
-            <li><a href="#home" class="home active" id="mm">HOME</a></li>
-            <li><a href="#about" class="about" id="mm">ABOUT</a></li>
-            <li><a href="#services" class="services" id="mm">SERVICES</a></li>
-            <li><a href="#recent" class="recent" id="mm">PORTFOLIO</a></li>
-           
-            <li><a href="#contact" class="contact" id="mm">CONTACT</a></li>
-        </ul>
-
-        </div>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Namaste, welcome</p>
+      <h1>Hi, I'm Prajwal.<br>I build <em>practical tools</em><br>for real work.</h1>
+      <p class="lede">This is my corner of the web — a home for the software I make and the things I'm working on.</p>
     </div>
-    
+  </section>
 
-    <div class="page">
+  <div class="wrap"><div class="stitch" aria-hidden="true"></div></div>
 
-
-
-      <div class="theme">
-        <div class="icon"><i class="fa fa-2x fa-paint-brush"></i></div>
-        <div class="sidecol">
-          <div class="col1" id="col1"></div>
-          <div class="col2" id="col2"></div>
-          <div class="col3" id="col3"></div>
-          <div class="col4" id="col4"></div>
-          <div style="display: none !important;" class="col5" id="col5"><i class="fa fa-moon" id="moon"></i></div>
-          <div class="col6" id="col6"><i class="fa fa-sun-o" id="sun"></i></div>
-      
-        </div>
-      </div>
-
-
-
-        <div class="content">
-            <div class="maintext"><h2>HELLO, I'M</h2><br>
-            <h1>PRAJWAL NEUPANE</h1><br>
-        <h4>A Front-End Web Developer</h4><br>
-    <ul><li><a href="#recent">VIEW MY WORK</a></li></ul>
-</div>
-            <div class="photo">
-              <img src="profile2.jpg" alt="Potrait of Prajwal">
+  <section id="apps">
+    <div class="wrap">
+      <h2>Apps</h2>
+      <a class="app-card" href="tackline.html">
+        <div>
+          <div class="app-title">
+            <div class="app-icon" aria-hidden="true">
+              <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-ink)">
+                <polyline points="3,20 7,10 11,20 15,10 19,20 23,10 27,20"/>
+              </svg>
             </div>
+            <span class="app-name">Tackline</span>
+          </div>
+          <p class="app-desc">Turn HPGL cut files into ready-to-stitch tackdown embroidery for tackle twill applique — placement, zigzag and satin stitches, laid out per letter and exported as DST.</p>
+          <div class="tags">
+            <span class="tag">HPGL / PLT in</span>
+            <span class="tag">DST out</span>
+            <span class="tag">Applique</span>
+          </div>
         </div>
-        <div class="socialmedia">
-            <ul>
-                <li><a href="https://www.facebook.com/prajwal.neupane.29 " target="_blank"><i class="fa fa-2x fa-facebook"></i></a></li>
-                <li><a href="https://www.instagram.com/_prajwal_neupane_" target="_blank"><i class="fa fa-2x fa-instagram"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/prajwal-neupane-9a78b9205" target="_blank"><i class="fa fa-2x fa-linkedin"></i></a></li>
-            </ul>
-        </div>
+        <span class="btn">Open Tackline <span>→</span></span>
+      </a>
     </div>
-    </section>
-    <section id="about">
-        <div class="exbig">
-        <div class="big">
-            <div class="medium1"><h1>ABOUT ME </h1><br><p>Something about Myself</p></div>
-            <div class="medium2">
-               
-                <div class="small1">
-                    <div class="up2"><h2>Hi, I am Prajwal Neupane</h2><br><p>I am a Student of Computer Programming at Niagara College - Toronto</p></div>
-                <div class="detail">
-                    <div class="detail1"> 
-                       <i class="fa fa-calendar"></i> <div class="tt">Date of Birth : 14th Apr, 2003</div>
-                       <i class="fa fa-phone"></i> <div  class="tt">Phone : +977-9867816055</div>
-                </div>
-                    <div class="detail2">
-                        <i class="fa fa-map-marker"></i> <div  class="tt">Location : Kathmandu, Nepal</div>
-                        <i class="fa fa-envelope"></i> <div  class="tt">Email : prajwalneupane01@gmail.com</div>
-                        
-                    </div>
-                   
-                </div>
-            </div>
-            <div class="skill-bars">
-              <div class="up3">
-              <h1>My Skills</h1>
-              </div>
-              <div class="skills-items">
-                <div class="row1">
-                  <div class="html">HTML</div>
-                  <div class="css">CSS</div>
-                </div>
-                <div class="row2">
-                  <div class="javascript">JavaScript</div>
-                  <div class="ps">MySQL</div>
-                </div>
-                <div class="row3">
-                  <div class="il">PHP</div>
-                </div>
-              </div>
-               </div>
-        </div>
-        
-        </div>
+  </section>
 
-    </section>
+  <section class="about" id="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <p>I'm Prajwal Neupane. I like turning slow, repetitive workflows into simple tools that just work. Tackline started as a way to replace old cutter software for applique lettering — more projects will show up here over time.</p>
+    </div>
+  </section>
+</main>
 
-    <section id="services">
-        <div class="exbig2">
-            <div class="big2">
-                <div class="medium1"><h1>MY SERVICES</h1><br><p>Below are the services I can provide for Free for sometime to enhance my Skills ! Just mail me and i will respond you.</p></div>
-                    <div class="grid">
-                        <div class="s1">
-                        <div class="service">
-                            <div class="icon"><i class="fa fa-3x fa-window-maximize
-                                "></i></div>
-                            <div class="headtxt"><h1>Web Design</h1></div>
-                            <div class="bodytext"><p>Static Web  With Creativity and Seamless Design</p></div>
-                        </div>
-                        <div class="service"><div class="icon"><i class="fa fa-3x fa-code"></i></div>
-                        <div class="headtxt"><h1>Web Development</h1></div>
-                        <div class="bodytext"><p>Effective web presence using cutting edge technologies to compete in the dynamic market.</p></div></div>
-                        <div class="service"><div class="icon"><i class="fa fa-3x fa-paint-brush"></i></div>
-                        <div class="headtxt"><h1>Graphics Designing</h1></div>
-                        <div class="bodytext"><p>Visualizing thoughts and concepts into fine pieces to give unique and excellent finishing.</p></div></div>
-                        </div>
-                        <div class="s2">
-                            <div class="service"><div class="icon"><i class="fa fa-3x fa-eye"></i></div>
-                            <div class="headtxt"><h1>Logo Design</h1></div>
-                            <div class="bodytext"><p>Creative and Attractive Logo for your company is not so far</p></div></div>
-                            <div class="service"><div class="icon"><i class="fa fa-3x fa-id-card"></i></div>
-                            <div class="headtxt"><h1>Personal Website</h1></div>
-                            <div class="bodytext"><p>Personal Portfolio Website with Great Design, Transition and Animation</p></div></div>
-                            <div class="service"><div class="icon"><i class="fa fa-3x fa-wrench"></i></div>
-                            <div class="headtxt"><h1>Consultant and Support</h1></div>
-                            <div class="bodytext"><p>24/7 Support and Consultancy</p></div></div>
-                        </div>
-                    </div>
-               
-                
-            </div>
-            
-            </div>
-            <div class="mind">
-                <h1>Have anything on mind?</h1><p>If you have any thing in mind and want to do with me, kindly contact me</p>
-<br>
-<ul>
-    <li><a href="CV.pdf" target="_blank">DOWNLOAD CV</a></li>
-    <li><a href="#contact">HIRE ME</a></li>
-</ul>
-</div>
-    </section>
-    <section id="recent">
-        <div class="exbig">
-            <div class="big2">
-                <div class="medium1"><h1>MY RECENT WORKS</h1><br><p></p></div>
-                    <div class="grid">
-                        <div class="s1">
-                        <div class="service">
-                         <a href="Recipe/recipe.html" target="_blank"><img style="height: 100%; width: 100%;" src="Project1.png"/></a>
-                        </div>
-                        <div class="service">
-                          <div class="icon"><i class="fa fa-3x fa-code"></i></div>
-                          <div class="headtxt"><h1>No Recent Work</h1></div>
-                          <div class="bodytext"><p>Still Learning</p></div>
-                      </div>
-                      <div class="service">
-                        <div class="icon"><i class="fa fa-3x fa-code"></i></div>
-                        <div class="headtxt"><h1>No Recent Work</h1></div>
-                        <div class="bodytext"><p>Still Learning</p></div>
-                    </div>
-                        </div>
-                        <div class="s2">
-                          <div class="service">
-                            <div class="icon"><i class="fa fa-3x fa-code"></i></div>
-                            <div class="headtxt"><h1>No Recent Work</h1></div>
-                            <div class="bodytext"><p>Still Learning</p></div>
-                        </div>
-                        <div class="service">
-                          <div class="icon"><i class="fa fa-3x fa-code"></i></div>
-                          <div class="headtxt"><h1>No Recent Work</h1></div>
-                          <div class="bodytext"><p>Still Learning</p></div>
-                      </div>
-                      <div class="service">
-                        <div class="icon"><i class="fa fa-3x fa-code"></i></div>
-                        <div class="headtxt"><h1>No Recent Work</h1></div>
-                        <div class="bodytext"><p>Still Learning</p></div>
-                    </div>
-                        </div>
-                    </div>
-               
-                
-            </div>
-            
-            </div>
-           
-    </section>
-    <section id="contact">
-        <div class="exbig2">
-            <div class="big2">
-                <div class="medium1"><h1>GET IN TOUCH</h1><br><p>Below Are My Contact Details</p></div>
-                    <div class="grid">
-                        <div class="s1">
-                        <div class="service">
-                            <div class="icon"><i class="fa fa-3x fa-map-marker"></i></div>
-                            <div class="headtxt"><h1>Address</h1></div>
-                            <div class="bodytext"><p>Toronto, ON, Canada</p></div>
-                        </div>
-                        <div class="service"><div class="icon"><i class="fa fa-3x fa-phone"></i></div>
-                        <div class="headtxt"><h1>Phone</h1></div>
-                        <div class="bodytext"><p>+1(437)-799-2887</p></div></div>
-                        <div class="service"><div class="icon"><i class="fa fa-3x fa-envelope"></i></div>
-                        <div class="headtxt"><h1>E-mail</h1></div>
-                        <div class="bodytext"><p>prajwalneupane01@gmail.com</p></div></div>
-                        </div>
-                       
-                    </div>
-               
-                
-            </div>
-            
-            </div>
-           
-    </section>
-    <section id="footer">
-        <div class="footer">
-            <h1>Prajwal Neupane</h1>
-            <p>FOLLOW ME ON DIFFERENT SOCIAL MEDIA PLATFORMS</p>
-                <div class="socialmedia2">
-                    <ul>
-                        <li><a href="https://www.facebook.com/prajwal.neupane.29 " target="_blank"><i class="fa fa-2x fa-facebook"></i></a></li>
-                        <li><a href="https://www.instagram.com/_prajwal_neupane_" target="_blank"><i class="fa fa-2x fa-instagram"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/prajwal-neupane-9a78b9205" target="_blank"><i class="fa fa-2x fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-        </div>
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Prajwal Neupane. All rights reserved.</span>
+    <span>prajwalneupane.com.np</span>
+  </div>
+</footer>
 
-        <div class="footerdeep"><h2>Copyright © 2023. All rights reserved by Prajwal Neupane</h2></div>
-
-        <a href="#home" class="up"><div class="goup" id="goup">
-          <i class="fa fa-chevron-up"></i>
-        </div>
-        </a>
-
-    </section>
-
-    <script>
-           
-
-        const sections = document.querySelectorAll("section");
-const navLi = document.querySelectorAll(".navitems ul li a");
-window.addEventListener("scroll", () => {
-let current = "";
-sections.forEach((section) => {
- const sectionTop = section.offsetTop;
- const sectionHeight = section.clientHeight;
- if (pageYOffset >= sectionTop - sectionHeight / 3) {
-   current = section.getAttribute("id");
- }
-});
-
-navLi.forEach((a) => {
- a.classList.remove("active");
- if (a.classList.contains(current)) {
-   a.classList.add("active");
- }
-});
-});
-
-
-var root = document.querySelector(':root');
-var col1 = document.getElementById("col1");
-var col2 = document.getElementById("col2");
-var col3 = document.getElementById("col3");
-var col4 = document.getElementById("col4");
-var col5 = document.getElementById("col5");
-var col6 = document.getElementById("col6");
-var goup = document.getElementById("goup");
-var navbar = document.getElementById("navbar");
-
-col1.onclick = function () {
-  root.style.setProperty('--blueviolet', '#be1616');
-  root.style.setProperty('--dark', '#8a1717');
-
-  
-}
-col2.onclick = function () {
-  root.style.setProperty('--blueviolet', '#37269c');
-  root.style.setProperty('--dark', '#11165c');
-
-  
-}
-col3.onclick = function () {
-  root.style.setProperty('--blueviolet', '#1b7409');
-  root.style.setProperty('--dark', '#27541d');
-
-  
-}
-col4.onclick = function () {
-  root.style.setProperty('--blueviolet', '#d35a22');
-  root.style.setProperty('--dark', '#8f490d');
-
-  
-}
-
-
-
-window.onscroll = function() {scrollFunction(), scrollFunction2()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("navbar").style.height = "50px";
-    document.getElementById("logo").style.transform="scale(0.8)";
-    document.getElementById("ul").style.transform="scale(0.8)";
-   
-  }
- 
-
- else {
-    document.getElementById("navbar").style.height = "100px";
-    document.getElementById("logo").style.transform="scale(1)";
-    document.getElementById("ul").style.transform="scale(1)";
-    
-  
-  }
-}
-
-window.addEventListener("scroll", myScript);
-function myScript (){
-  if(document.body.scrollTop > 1600 || document.documentElement.scrollTop > 1600){
-    goup.style.display="flex";
-
-  }else{
-    goup.style.display="none";
-
-  }
-}
-
-var menubar2 = document.getElementById("menubar2");
-var sidenav = document.getElementById("sidenav");
-sidenav.style.right="-200px";
-menubar2.style.color="var(--blueviolet)";
-
-menubar2.onclick=function(){
-  if(sidenav.style.right=="-200px" && swap.hasAttribute('href','styles.css')){
-    sidenav.style.right="0"; 
-    menubar2.style.color="white";
-    menubar2.className="fa fa-2x fa-times";
-
-  }else {
-    sidenav.style.right="-200px"; 
-    menubar2.style.color="var(--blueviolet)";
-    menubar2.className="fa fa-2x fa-bars";
-
-  }
-}
-
-document.onclick= function(e){
-  if(e.target.id !=='sidenav' && e.target.id !=='menubar2'){
-    sidenav.style.right="-200px";
-    menubar2.style.color="var(--blueviolet)";
-    menubar2.className="fa fa-2x fa-bars";
-
-
-  }
-}
-var home = document.getElementById("home");
-var about = document.getElementById("about");
-var services = document.getElementById("services");
-var recent = document.getElementById("recent");
-var contact = document.getElementById("contact");
-var swap = document.getElementById("swap");
-swap.setAttribute('href' , 'styles.css')
-
-
-
-col5.onclick = function() {swapStyleSheet()};
-function swapStyleSheet() {
-  swap.setAttribute('href', 'dark.css')
-  menubar2.style.color="white";
-
-  }
-
-  col6.onclick = function(){
-    swap.setAttribute('href', 'styles.css')
-
-  }
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-     
-      
-    </script>
-
-    
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
