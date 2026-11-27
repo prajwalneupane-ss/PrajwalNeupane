@@ -70,7 +70,7 @@ details>.g{padding:0 0 16px}
 #msg:empty{display:none}
 .hint{margin:0;color:var(--mute);font-size:12.5px;line-height:1.45}
 .view{display:flex;flex-direction:column;min-width:0;min-height:0;background:var(--bg)}
-.stage{flex:1;min-height:0;position:relative;overflow:hidden;touch-action:none;background:var(--mat)}
+.stage{flex:1;min-height:0;position:relative;overflow:hidden;touch-action:none;background:repeating-linear-gradient(45deg,#ffffff08 0 2px,#0000 2px 7px),radial-gradient(130% 100% at 50% 35%,var(--mat2) 0,var(--mat) 70%)}
 .stop{position:absolute;top:10px;left:10px;right:10px;display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap;z-index:3;pointer-events:none}
 .stop>div{pointer-events:auto}
 .otools,.tools,.ztools{display:flex;gap:6px;flex-wrap:wrap;align-items:center}.tools{justify-content:flex-end}.ztools{position:absolute;right:10px;bottom:10px;z-index:3}
@@ -166,7 +166,7 @@ details>.g{padding:0 0 16px}
 .sw.s{width:16px;height:16px;border-width:1.5px;font-size:10px;line-height:1;color:#fff}
 .thr{display:grid;gap:4px}
 #sec.stmode details.gen{display:none}#sec:not(.stmode) details.dstonly{display:none}
-.layset{display:flex;flex-direction:column;gap:6px}.lrow{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;font-size:12.5px}.lrow>b{min-width:78px}.lk{display:inline-flex;align-items:center;gap:5px;flex-wrap:wrap}.allk{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--mute);padding-bottom:2px}
+.allk{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--mute);padding-bottom:2px}
 .trow{display:flex;align-items:center;gap:8px;padding:4px 8px;border:1px solid var(--line);border-radius:8px}
 .trow .sw{width:18px;height:18px;display:inline-block}
 /* edit */
@@ -206,7 +206,7 @@ details>.g{padding:0 0 16px}
 <span class="fchip" id="fname" title="Current file">No file open</span>
 <div class="grp"><button class="alt" id="openTop" type="button">Open file</button><button class="alt" id="sample" type="button">Try a sample</button><button class="alt" id="keysbtn" type="button" title="Keyboard shortcuts (?)">Shortcuts</button><button class="alt" id="resetAll" type="button" title="Put every setting back to its default">Reset all</button></div>
 <span class="grow"></span>
-<div class="grp"><button id="dl" type="button" disabled>Download .dst</button><button class="alt" id="dlx" type="button" disabled>.exp</button><button class="alt" id="dls" type="button" disabled title="Vector artwork as you see it on screen: fabric colors, thread colors and the view options you have ticked. Opens in Illustrator, CorelDRAW and Inkscape.">.svg</button><button class="alt" id="dlf" type="button" disabled title="Vector PDF of the same artwork, to print it or open it in Illustrator or CorelDRAW">.pdf</button></div>
+<div class="grp"><button id="dl" type="button" disabled>Download .dst</button><button class="alt" id="dlx" type="button" disabled>.exp</button><button class="alt" id="dls" type="button" disabled>.svg</button></div>
 </header>
 <main><div class="rz" id="rz" role="separator" aria-orientation="vertical" aria-label="Drag to resize the settings panel" tabindex="0"></div>
 <section class="left" aria-label="Settings">
@@ -218,7 +218,7 @@ details>.g{padding:0 0 16px}
 <section class="view" aria-label="Preview">
 <div class="stage"><canvas id="cv" tabindex="0" aria-label="Stitch preview. Scroll or pinch to zoom, drag to pan, double-click to fit."></canvas>
 <div class="stop"><div class="otools"><button id="rl" type="button" title="Rotate 90° counter-clockwise" aria-label="Rotate 90 degrees counter-clockwise">⟲ 90°</button><button id="rr" type="button" title="Rotate 90° clockwise" aria-label="Rotate 90 degrees clockwise">⟳ 90°</button><button id="fh" type="button" title="Flip left to right" aria-label="Flip horizontally">Flip ↔</button><button id="fv" type="button" title="Flip top to bottom" aria-label="Flip vertically">Flip ↕</button><span class="sep" style="background:#ffffff40"></span><label class="chip" id="echip"><input type="checkbox" id="ve">Edit stitches</label><label class="chip" id="mchip"><input type="checkbox" id="vm">Measure</label></div>
-<div class="tools"><label class="chip"><input type="checkbox" id="vf">Fabric</label><label class="chip"><input type="checkbox" id="vc" checked>Cut line</label><label class="chip"><input type="checkbox" id="vj">Jumps</label><label class="chip"><input type="checkbox" id="vp" checked>Points</label><label class="chip"><input type="checkbox" id="vt" checked>Thread colors</label><label class="chip"><input type="checkbox" id="vn" checked>Order</label><label class="chip"><input type="checkbox" id="vw">Warnings</label></div></div>
+<div class="tools"><label class="chip"><input type="checkbox" id="vf" checked>Fabric</label><label class="chip"><input type="checkbox" id="vc" checked>Cut line</label><label class="chip"><input type="checkbox" id="vj" checked>Jumps</label><label class="chip"><input type="checkbox" id="vp" checked>Points</label><label class="chip"><input type="checkbox" id="vt" checked>Thread colors</label><label class="chip"><input type="checkbox" id="vn" checked>Order</label><label class="chip"><input type="checkbox" id="vw" checked>Warnings</label></div></div>
 <div class="ztools"><button id="zout" type="button" aria-label="Zoom out">−</button><button id="zin" type="button" aria-label="Zoom in">+</button><button id="zfit" type="button" aria-label="Fit to view">Fit</button><button id="z100" type="button" title="Show the design at its real size on your screen (Shift-click to calibrate with a ruler)">100%</button><button id="z3d" type="button" aria-pressed="false" title="Realistic view: fabric, layers and shiny thread">3D view</button></div>
 <div class="hud" id="hud"></div>
 <div class="cal" id="cal"><div class="box"><h3>Calibrate true size</h3><p>Hold a ruler to the screen. The bar below is drawn as 100 mm long. Type how long it really measures.</p><div class="bar" id="calBar"></div><p><label>Measured length (mm) <input id="calMm" type="number" min="20" max="400" step="0.5" value="100"></label></p><div class="row"><button type="button" class="go" id="calSave">Save</button><button type="button" class="alt" id="calReset">Use standard size</button><button type="button" class="alt" id="calClose">Close</button></div></div></div>
@@ -252,15 +252,15 @@ const D1='min="0.2" max="20" step="0.1"',P1='min="0" max="200" step="1"';
 const SPEC=[
 ['Orientation',[['rot','Rotation (degrees, counter-clockwise)',0,'step="1"'],['fx','Flip horizontally',false],['fy','Flip vertically',false]]],
 ['Tack side',[['side','Which side of the cut line gets stitched',0,{opts:[[0,'Auto (detects frame + letters)'],[1,'Nested shapes are holes (letters with counters)'],[2,'Nested shapes are pieces on top (frame + letters)'],[3,'All inside'],[4,'All outside']]}],['sideFlip','Flip side on every shape',false]]],
-['Sequence & colors',[['seqMode','Shape order',1,{opts:[[0,'Optimized (shortest travel)'],[1,'Left to right'],[2,'Right to left'],[3,'Top to bottom'],[4,'Bottom to top'],[5,'By thread color'],[6,'Manual (drag the list)']]}],['seqPass','Stitch order',2,{opts:[[2,'By thread color (set below)'],[0,'Stitch type first (all zigzag, then all satin)'],[1,'Shape first (each shape finishes all its stitch types)']]}]]],
-['Edit stitches',[['edReach','Soft-drag reach (mm)',0,'min="0" max="20" step="0.5"']]],
+['Sequence & colors',[['seqMode','Shape order',0,{opts:[[0,'Optimized (shortest travel)'],[1,'Left to right'],[2,'Right to left'],[3,'Top to bottom'],[4,'Bottom to top'],[5,'By thread color'],[6,'Manual (drag the list)']]}],['seqPass','Stitch order',2,{opts:[[2,'By thread color (set below)'],[0,'Stitch type first (all zigzag, then all satin)'],[1,'Shape first (each shape finishes all its stitch types)']]}],['plLayers','Placement stitch on',1,{opts:[[1,'Base layer only (layers go on together)'],[0,'Every layer (layers go on separately)']]}]]],
+['Edit stitches',[['edReach','Soft-drag reach (mm)',3,'min="0" max="20" step="0.5"']]],
 ['Checks & trims',[['stMin','Warn on stitches shorter than (mm)',0.3,'min="0" max="5" step="0.1"'],['stMax','Warn on stitches longer than (mm)',12,'min="1" max="30" step="0.5"'],['jmMax','Warn on jumps longer than (mm, 0 = off)',0,'min="0" max="500" step="1"'],['trimLk','Trim after every tie-off (when lock stitches are on)',true],['trimMm','Also trim on jumps longer than (mm, 0 = off)',0,'min="0" max="500" step="1"']]],
-['Batch export',[['bTrim','Trim thread between copies',true],['bDef','Default copies per file',5,'min="1" max="60" step="1"'],['bGap','Gap between copies (mm)',5,'min="0" max="40" step="0.5"'],['bRot','Rotate copies to pack tighter',1,{opts:[[0,'No rotation'],[1,'Upright and 180°'],[2,'Any 90° turn']]}],['bRotGain','Turn a copy only if it saves at least (mm)',2,'min="0" max="50" step="0.5"'],['bHW','Hoop width warning (inches, 0 = off)',0,'min="0" max="40" step="0.1"'],['bHH','Hoop height warning (inches, 0 = off)',0,'min="0" max="40" step="0.1"']]],
+['Batch export',[['bTrim','Trim thread between copies',true],['bDef','Default copies per file',5,'min="1" max="60" step="1"'],['bGap','Gap between copies (mm)',3,'min="0" max="40" step="0.5"'],['bRot','Rotate copies to pack tighter',1,{opts:[[0,'No rotation'],[1,'Upright and 180°'],[2,'Any 90° turn']]}],['bRotGain','Turn a copy only if it saves at least (mm)',2,'min="0" max="50" step="0.5"'],['bHW','Hoop width warning (inches, 0 = off)',0,'min="0" max="40" step="0.1"'],['bHH','Hoop height warning (inches, 0 = off)',0,'min="0" max="40" step="0.1"']]],
 ['Stitch file (.dst)',[['dstGap','Join stitches into one shape when closer than (mm)',1,'min="0" max="30" step="0.5"']]],
-['Placement (outline)',[['pl','Placement stitching',true],['plLen','Stitch length (mm)',3.0,'min="0.5" max="12" step="0.1"']]],
+['Placement (outline)',[['pl','Placement stitching',false],['plLen','Stitch length (mm)',3.0,'min="0.5" max="12" step="0.1"']]],
 ['Tackdown',[['td','Tackdown stitching',false],['tdIn','Indent (mm)',1.0],['tdMin','Min stitch (mm)',0.6],['tdMax','Max stitch (mm)',3.0]]],
-['Zigzag column',[['zz','Zigzag column stitching',true],['apMode','Applique stitch type',1,{opts:[[1,'Regular stitch (overlap 100%, all layers)'],[2,'China stitch on base layer only (base 140%, other layers 100%)'],[3,'China stitch on all layers (overlap 140%)'],[0,'Custom (use the Overlap setting below)']]}],['zzW','Width (mm)',3.0],['denU','Density unit (zigzag and satin)',0,{opts:[[3,'Stitches per cm'],[4,'Stitches per inch'],[2,'Stitches per mm'],[1,'Spacing (mm between stitches)'],[0,'Original table (1–20)']]}],['zzD','Density',4,D1],['zzO','Overlap (%, up to 200, Custom type only)',100,P1],['zzC','Contour (taper ends)',true],['curveD','Even density on curves (zigzag and satin)',true],['zzCd','Extra stitches where corners overlap',true],['zzClip','Clip ends',false],['zzCor','Sharp corners',0,{opts:[[5,'Auto (overlap on easy corners, fan on sharp ones)'],[0,'Overlap (stitches extend and cross over)'],[1,'Fan (stitches pivot around the corner)'],[2,'None (runs butt together)'],[3,'Mitre (one angled stitch, sharp tip)'],[4,'Light overlap (half the extension)']]}],['zzTiny','Merge two corners closer than (mm)',0,'min="0" max="3" step="0.1"'],['zzAng','Angle changes (gentle bends)',5,{opts:[[5,'Auto (overlap, fan if the bend is sharp)'],[0,'Overlap (fill the wedge at the bend)'],[1,'Fan (pivot at the bend)'],[2,'None (follow the line only)'],[3,'Mitre (one angled stitch at the bend)'],[4,'Light overlap (half the extension)']]}]]],
-['Satin column',[['st','Satin column stitching',false],['stW','Width (mm)',4.0],['stD','Density',16,D1],['stO','Overlap (%, up to 200)',85,P1],['stCorner','Add corner buffer points',true],['stShort','Short stitching in corners',true],['stExt','Extend corners',false],['stCor','Sharp corners',1,{opts:[[5,'Auto (fan)'],[0,'Overlap (stitches extend and cross over)'],[1,'Fan (stitches pivot around the corner)'],[2,'None (runs butt together)'],[3,'Mitre (one angled stitch, sharp tip)'],[4,'Light overlap (half the extension)']]}],['stAng','Angle changes (gentle bends)',1,{opts:[[5,'Auto (fan)'],[0,'Overlap (fill the wedge at the bend)'],[1,'Fan (pivot at the bend)'],[2,'None (follow the line only)'],[3,'Mitre (one angled stitch at the bend)'],[4,'Light overlap (half the extension)']]}]]],
+['Zigzag column',[['zz','Zigzag column stitching',true],['zzW','Width (mm)',4.0],['denU','Density unit (zigzag and satin)',3,{opts:[[3,'Stitches per cm'],[4,'Stitches per inch'],[2,'Stitches per mm'],[1,'Spacing (mm between stitches)'],[0,'Original table (1–20)']]}],['zzD','Density',12,D1],['zzO','Overlap (%, up to 200)',85,P1],['zzC','Contour (taper ends)',false],['curveD','Even density on curves (zigzag and satin)',true],['zzCd','Extra stitches where corners overlap',true],['zzClip','Clip ends',false],['zzCor','Sharp corners',5,{opts:[[5,'Auto (overlap on easy corners, fan on sharp ones)'],[0,'Overlap (stitches extend and cross over)'],[1,'Fan (stitches pivot around the corner)'],[2,'None (runs butt together)'],[3,'Mitre (one angled stitch, sharp tip)'],[4,'Light overlap (half the extension)']]}],['zzAng','Angle changes (gentle bends)',5,{opts:[[5,'Auto (overlap, fan if the bend is sharp)'],[0,'Overlap (fill the wedge at the bend)'],[1,'Fan (pivot at the bend)'],[2,'None (follow the line only)'],[3,'Mitre (one angled stitch at the bend)'],[4,'Light overlap (half the extension)']]}]]],
+['Satin column',[['st','Satin column stitching',false],['stW','Width (mm)',4.0],['stD','Density',40,D1],['stO','Overlap (%, up to 200)',85,P1],['stCorner','Add corner buffer points',true],['stShort','Short stitching in corners',true],['stExt','Extend corners',false],['stCor','Sharp corners',1,{opts:[[5,'Auto (fan)'],[0,'Overlap (stitches extend and cross over)'],[1,'Fan (stitches pivot around the corner)'],[2,'None (runs butt together)'],[3,'Mitre (one angled stitch, sharp tip)'],[4,'Light overlap (half the extension)']]}],['stAng','Angle changes (gentle bends)',1,{opts:[[5,'Auto (fan)'],[0,'Overlap (fill the wedge at the bend)'],[1,'Fan (pivot at the bend)'],[2,'None (follow the line only)'],[3,'Mitre (one angled stitch at the bend)'],[4,'Light overlap (half the extension)']]}]]],
 ['Lock stitch',[['lk','Lock stitch before and after jump',true],['lkHide','Hide locks inside the zigzag/satin (not on its open edge)',true],['lkT','Lock type',5,[3,4,5]],['lkS','Lock size (0.1 mm)',4,[3,4,5,6,7]]]],
 ['Processing',[['pSnap','Preview stitches snapped to the 0.1 mm machine grid',false],['pProt','Eliminate protruding stitches',true],['pSeg','Tackdown segment reduction',true],['pClose','Close polygons (1.0 mm)',true],['pGroup','Group internal polygons',true],['pDup','Eliminate duplicate polygons',true],['pOpt','Optimize stitch order',true],['pStop','Pause between stitch types',true],['ctr','Center design at origin',true],['ret','Trim and return to origin at end',true]]]
 ];
@@ -276,6 +276,7 @@ const IDS=SPEC.flatMap(s=>s[1].map(f=>f[0]));
 
 const HELP={
  seqMode:'The order the shapes are stitched in. Pick an automatic order, or drag the shapes in the list below to set your own (this switches to Manual). Shapes of different thread colors get a color change between them.',
+ plLayers:'For all letters at once. Base layer only gives a single placement line on the bottom layer, for applique where all the layers are laid down together. Every layer gives each layer its own placement line, for applique where the layers go on one at a time. Only matters when Placement stitching is turned on.',
  seqPass:'By thread color runs every stitch in thread order 1, then thread order 2 and so on; give each shape and stitch type its own color in the list. Stitch type first runs every shape through one stitch type before the next (for example all zigzag, then all satin). Shape first finishes every stitch type on one shape before moving to the next.',
  dstGap:'When a .dst file is opened, stitches are grouped into shapes (letters) by where they sit. Stitches whose areas touch or overlap, or sit within this distance of each other, belong to the same shape. Raise it if a letter splits into pieces (for example an i and its dot); lower it if neighbouring letters merge.',
  edReach:'How far a drag spreads along the stitching. The stitch you grab moves the most and nearby stitches follow it, fading out at this distance, so one pull reshapes a curve smoothly. Set it to 0 to move a single stitch point.',
@@ -298,11 +299,9 @@ const HELP={
  zzW:'Width of the zigzag, across the cut line.',
  denU:'The unit the zigzag and satin density is typed in. Changing it converts the current values, so nothing changes on the design. All of them measure stitches along the column, so a 1 in letter and a 3 in letter with the same density look the same. Only the column width should change with letter size.',
  zzD:'How close the zigzag stitches sit along the column, in the unit chosen above. The line under the box shows the same value in other units.',
- apMode:'Regular stitch starts the zigzag exactly on the cut line (overlap 100%). China stitch keeps it clear of the line (overlap 140%). With several layers you can put China stitch on the base layer only or on every layer. Width, overlap and density can still be changed for each layer in the Sequence list.',
  zzO:'How much of the width sits on the material side of the cut line. 85% tucks a little over the line, 100% starts exactly at the line, and above 100% keeps the stitches clear of it by width × (overlap − 100%).',
  zzC:'Tapers the stitch width at the open ends of a line so it finishes in a point. Closed shapes are not affected.',
  zzClip:'Removes the first and last stitch of each column.',
- zzTiny:'When two sharp corners sit closer together than this (the closed end of a very narrow slot, for example), they are stitched as one point so the stitches fan round it. Corners further apart than this are stitched as two separate corners. The default is 0, which always stitches them as two corners.',
  zzCd:'Where the stitches extend past a sharp corner and cross over, uses about 60% more stitches so the overlap is a dense crisscross instead of a few long stitches.',curveD:'On a curve the stitch ends on the inside of the bend bunch up and the ones on the outside spread apart. This spaces the stitches along the line by the local curvature so the density looks even, with the inside end kept from piling up. Turn it off for constant spacing along the cut line.',zzCor:'What stitches do at sharp turns on the outside. Auto (recommended) overlaps easy corners and fans the stitches around sharp ones, which keeps notches and spike tips clean. Overlap extends and crosses them, Fan pivots them around the corner, None butts the two runs together, Mitre adds one stitch along the corner\'s diagonal for a clean sharp tip, and Light overlap extends them only half as far.',
  zzAng:'The same choice for gentle bends (Auto fans only the sharper ones) of roughly 11–37° in an otherwise straight edge. Curves are never treated as bends.',
  stW:'Width of the satin column, across the cut line.',stD:'How close the satin stitches sit along the column, in the unit chosen above. The line under the box shows the same value in other units.',
@@ -325,7 +324,7 @@ const HELP={
 };
 IDS.forEach(id=>{const t=HELP[id],e=$(id);if(!t||!e)return;const l=e.closest('label');if(!l)return;const tn=[...l.childNodes].find(n=>n.nodeType===3&&n.textContent.trim());if(!tn)return;const sp=document.createElement('span');sp.className='lt';l.insertBefore(sp,tn);sp.appendChild(tn);const i=document.createElement('i');i.className='tip';i.tabIndex=0;i.textContent='?';i.setAttribute('data-t',t);i.setAttribute('role','note');i.setAttribute('aria-label',t);sp.appendChild(i)});
 {const sd=[...document.querySelectorAll('#sec details')].find(d=>d.querySelector('summary').textContent.trim()==='Sequence & colors');
- if(sd)sd.insertAdjacentHTML('beforeend','<div class="seq"><div class="seqbar"><b>Layer settings (apply to every shape)</b></div><div id="layset" class="layset"></div><p class="hint" id="laysetHint"></p><div class="seqbar"><b>Shapes and their stitches</b><button type="button" class="alt" id="seqRev" title="Reverse the current order">Reverse</button></div><div id="objlist" class="objlist" aria-label="Shapes in stitch order"></div><div class="seqbar"><b>Thread sequence (what runs first)</b></div><div id="thr" class="thr"></div><div class="seqbar"><b>Fabric colors</b><button type="button" class="alt" id="fabReset">Reset</button></div><div id="fabrow" class="fabrow"></div><p class="hint">Fills each cut shape with twill fabric so you can see the finished applique. Base layer first, each layer above it on top. Set a different color on any single piece from its row in the list. Turn the view on or off with the Fabric chip on the preview.</p><div class="seqbar"><b>Thread colors</b><button type="button" class="alt" id="palReset">Reset</button></div><div id="palbox" class="palbox"></div><p class="hint">Drag a shape (or use the arrows) to set your own order. Click a color dot to change a shape. Click a shape on the preview to find it in the list. Different colors in a row get a color change in the file.</p></div>')}
+ if(sd)sd.insertAdjacentHTML('beforeend','<div class="seq"><div class="seqbar"><b>Shapes and their stitches</b><button type="button" class="alt" id="seqRev" title="Reverse the current order">Reverse</button></div><div id="objlist" class="objlist" aria-label="Shapes in stitch order"></div><div class="seqbar"><b>Thread sequence (what runs first)</b></div><div id="thr" class="thr"></div><div class="seqbar"><b>Fabric colors</b><button type="button" class="alt" id="fabReset">Reset</button></div><div id="fabrow" class="fabrow"></div><p class="hint">Fills each cut shape with twill fabric so you can see the finished applique. Base layer first, each layer above it on top. Set a different color on any single piece from its row in the list. Turn the view on or off with the Fabric chip on the preview.</p><div class="seqbar"><b>Thread colors</b><button type="button" class="alt" id="palReset">Reset</button></div><div id="palbox" class="palbox"></div><p class="hint">Drag a shape (or use the arrows) to set your own order. Click a color dot to change a shape. Click a shape on the preview to find it in the list. Different colors in a row get a color change in the file.</p></div>')}
 {const ed=[...document.querySelectorAll('#sec details')].find(d=>d.querySelector('summary').textContent.trim()==='Edit stitches');
  if(ed)ed.insertAdjacentHTML('beforeend','<div class="seq"><div class="edbar"><button type="button" class="alt" id="edOn">Start editing</button><button type="button" class="alt" id="edUndo">Undo</button><button type="button" class="alt" id="edRedo">Redo</button><button type="button" class="alt" id="edRS">Reset shape</button><button type="button" class="alt" id="edRA">Reset all</button></div><p class="hint" id="edInfo">No edits yet.</p><p class="hint">Turn on Edit stitches (key E), then drag any stitch on the preview. Nearby stitches follow smoothly. Ctrl+Z / Ctrl+Y undo and redo. Pan by dragging empty space. Finish your settings first: changing a setting that rebuilds a stitch resets its edits.</p></div>')}
 {const bd=[...document.querySelectorAll('#sec details')].find(d=>d.querySelector('summary').textContent.trim()==='Batch export');
@@ -356,9 +355,9 @@ const updInches=()=>{IDS.forEach(i=>{const e=$(i+'_in');if(e){const v=getV(i);e.
 const getV=id=>{const e=$(id);return e.type==='checkbox'?e.checked:+e.value};
 const setV=(id,v)=>{const e=$(id);if(e.type==='checkbox')e.checked=!!v;else e.value=v};
 const store=(k,v)=>{try{if(v===undefined)return JSON.parse(localStorage.getItem(k)||'null');localStorage.setItem(k,JSON.stringify(v))}catch(e){return null}};
-const snap=()=>Object.assign(Object.fromEntries(IDS.map(i=>[i,getV(i)])),{_auto:1,_d3:1,_d4:1,_d5:1});
+const snap=()=>Object.assign(Object.fromEntries(IDS.map(i=>[i,getV(i)])),{_auto:1});
 const apply=s=>{if(s)IDS.forEach(i=>s[i]!=null&&setV(i,s[i]))};
-{const sv=store('tack2');if(sv&&sv.denU==null){sv.denU=0;store('tack2',sv)}if(sv&&!sv._auto){if(sv.zzCor===0||sv.zzCor==='0')sv.zzCor=5;if(sv.zzAng===0||sv.zzAng==='0')sv.zzAng=5;sv._auto=1;store('tack2',sv)}if(sv&&!sv._d5){sv.zzTiny=0;sv._d5=1;store('tack2',sv)}if(sv&&!sv._d4){sv.pl=true;sv.plLen=3;sv._d4=1;store('tack2',sv)}if(sv&&!sv._d3){Object.assign(sv,{apMode:1,zzW:3,denU:0,zzD:4,stD:16,zzO:100,zzC:true,zzCor:0,seqMode:1,edReach:0,bGap:5,_d3:1});store('tack2',sv)}apply(sv)}updInches();
+{const sv=store('tack2');if(sv&&sv.denU==null){sv.denU=0;store('tack2',sv)}if(sv&&!sv._auto){if(sv.zzCor===0||sv.zzCor==='0')sv.zzCor=5;if(sv.zzAng===0||sv.zzAng==='0')sv.zzAng=5;sv._auto=1;store('tack2',sv)}apply(sv)}updInches();
 
 let paths=[],mm=[],groups=[],sideInfo='',outName='stitches';
 const safeName=n=>(String(n||'').replace(/\.[^.]+$/,'').replace(/[^\w\- ]+/g,'_').trim()||'stitches');
@@ -740,7 +739,7 @@ async function handleFiles(list){
     try{
       const r=parseDST(new Uint8Array(await f.arrayBuffer()));
       stitchSrc={segs:r.segs,name:f.name,key:null};paths=[];resetSeq();needFit=true;fileStem=safeName(f.name);outName=safeName(f.name);
-      ['dl','dlx','dls','dlf'].forEach(i=>$(i).disabled=false);$('vt').checked=true;
+      ['dl','dlx','dls'].forEach(i=>$(i).disabled=false);$('vt').checked=true;
       rebuild();
       $('msg').textContent='Opened '+f.name+' as stitches: '+r.stitches.toLocaleString()+' stitches, '+r.blocks+' color block'+(r.blocks>1?'s':'')+', '+letterList().length+' shape'+(letterList().length===1?'':'s')+'.'+(files.length>1?' Only one stitch file can be open at a time, so the other files were skipped.':'')+' The cutter-file stitch settings and fabric colors need a cut file, so they do not apply to a stitch file.';
     }catch(e){$('msg').textContent=f.name+': '+(e&&e.message||'could not be read.')}
@@ -752,7 +751,7 @@ async function handleFiles(list){
   }
   if(sets.length){
     stitchSrc=null;paths=mergeSets(sets);resetSeq();needFit=true;fileStem=sets.length===1?safeName(sets[0].name):'';outName=sets.length===1?safeName(sets[0].name):'stitches';
-    ['dl','dlx','dls','dlf'].forEach(i=>$(i).disabled=false);
+    ['dl','dlx','dls'].forEach(i=>$(i).disabled=false);
     rebuild();
   }
   const ok=sets.length?('Loaded '+sets.map(s=>s.name).join(', ')+(sets.length>1?' (placed side by side, 10 mm apart).':'.')):'';
@@ -985,21 +984,6 @@ const AUTO_FAN=2.75; // turn angle (rad, about 157 degrees): only needle-thin no
 function column(p,o){
   p=p.filter((q,i)=>!i||dist(q,p[i-1])>0.02);
   if(p.length<2)return[];
-  /* a very short edge between two sharp turns of the same direction (the closed end of a narrow slot, a stubby tip) is treated as one corner point:
-     the two corners are replaced by the middle of that edge, so the stitches fan round one point instead of tangling between two. */
-  if(o.corner&&!o._tiny&&p.length>4&&+getV('zzTiny')>0){
-    const cl0=isClosed(p),V=cl0?p.slice(0,-1):p.slice(),m=V.length,tmax=Math.min(+getV('zzTiny')||0,0.5*o.w),dr=[];
-    const th=(i)=>{const a=V[(i+m-1)%m],b=V[i],c=V[(i+1)%m],u=[b[0]-a[0],b[1]-a[1]],v=[c[0]-b[0],c[1]-b[1]];return Math.atan2(u[0]*v[1]-u[1]*v[0],u[0]*v[0]+u[1]*v[1])};
-    const T=V.map((_,i)=>(cl0||(i>0&&i<m-1))?th(i):0);
-    for(let i=0;i<m;i++){const j=(i+1)%m;if(!cl0&&j<i)continue;if(!cl0&&(i===0||j===m-1))continue;
-      if(dist(V[i],V[j])<tmax&&Math.abs(T[i])>0.5&&Math.abs(T[j])>0.5&&T[i]*T[j]>0&&Math.abs(T[i]+T[j])>1.9)dr.push(i)}
-    if(dr.length){
-      const drop=new Set(),mid=new Map();
-      dr.forEach(i=>{const j=(i+1)%m;if(drop.has(i)||drop.has(j)||mid.has(i)||mid.has(j))return;mid.set(i,[(V[i][0]+V[j][0])/2,(V[i][1]+V[j][1])/2]);drop.add(j)});
-      const W=[];V.forEach((q,i)=>{if(drop.has(i))return;W.push(mid.get(i)||q)});
-      if(W.length>=3)return column(cl0?W.concat([W[0].slice()]):W,Object.assign({},o,{_tiny:1}));
-    }
-  }
   /* overlap above 100% keeps the stitches off the edge: the column is a plain band set in from the cut line. Build it as a normal column on an
      offset copy of the line, so the corners behave exactly as they do at 100% (the offset keeps the corner angles). */
   if(o.ov>102&&!o._off&&!o.satin){
@@ -1085,18 +1069,8 @@ function column(p,o){
   cand.sort((a,b)=>Math.abs(b.phi)-Math.abs(a.phi));
   const cor=[];
   cand.forEach(c=>{
-    const near=cor.filter(k=>{let x=Math.abs(k.d-c.d);if(cl)x=Math.min(x,L0-x);return x<2.5});
-    if(!near.length){cor.push(c);return}
-    /* two sharp corners close together that turn the same way and add up to a U-turn (the end of a narrow slot or a stubby tip) are two real corners,
-       not one corner seen twice; a single rounded or chamfered corner only turns about 90 degrees in total, so it still counts once */
-    if(near.length===1&&near[0].kind==='c'&&c.kind==='c'&&near[0].phi*c.phi>0){
-      const k=near[0];let gap=Math.abs(k.d-c.d),d1=Math.min(k.d,c.d),d2=Math.max(k.d,c.d);
-      if(cl&&L0-gap<gap){gap=L0-gap;d1=Math.max(k.d,c.d);d2=Math.min(k.d,c.d)+L0}
-      if(gap>=0.3){
-        const v0=at(d1),v1=at(d1-R),w0=at(d2),w1=at(d2+R),a=unit(v0[0]-v1[0],v0[1]-v1[1]),b=unit(w1[0]-w0[0],w1[1]-w0[1]);
-        if(Math.abs(Math.atan2(a[0]*b[1]-a[1]*b[0],a[0]*b[0]+a[1]*b[1]))>2.4)cor.push(c)
-      }
-    }
+    const far=cor.some(k=>{let x=Math.abs(k.d-c.d);if(cl)x=Math.min(x,L0-x);return x<2.5});
+    if(!far)cor.push(c);
   });
   cor.sort((a,b)=>a.d-b.d);
   /* 2. split the path into runs between corners */
@@ -1290,26 +1264,22 @@ function lockPts(a,t,s){
 }
 
 /* ---------- sequencing and thread colors ---------- */
-const PAL0=['#111111','#ffffff','#e5484d','#3b82f6','#22c55e','#f97316','#ec4899','#8b5cf6','#1e3a8a','#ffc83d','#9ca3af','#92400e'],PALOLD=['#ffc83d','#e5484d','#ffffff','#3b82f6','#22c55e','#f97316','#ec4899','#8b5cf6','#1e3a8a','#111111','#9ca3af','#92400e'];
-let PAL=(()=>{let s=store('tack2pal');if(!(Array.isArray(s)&&s.length===PAL0.length))return PAL0.slice();if(!store('tack2pal4')){s=s.every((c,i)=>c===PALOLD[i])?PAL0.slice():s.map((c,i)=>i<2?PAL0[i]:c);store('tack2pal',s);store('tack2pal4',1)}return s})();
+const PAL0=['#ffc83d','#e5484d','#ffffff','#3b82f6','#22c55e','#f97316','#ec4899','#8b5cf6','#1e3a8a','#111111','#9ca3af','#92400e'];
+let PAL=(()=>{const s=store('tack2pal');return Array.isArray(s)&&s.length===PAL0.length?s:PAL0.slice()})();
 const objState=new Map();
 const st=id=>{let s=objState.get(id);if(!s){s={color:null,on:true,copies:null,appr:false,name:null};objState.set(id,s)}return s};
-const DEFK={pl:0,td:0,zz:1,st:2},ZZL=[1,3,4,5],PLL=[0,6,7,8],THR0=[0,1,6,3,7,4,8,5,2,9,10,11];
+const DEFK={pl:0,td:0,zz:1,st:2},ZZL=[1,3,4,5];
 let layerOf=new Map(),innerSet=new Set(),penOf=new Map();
-const defCol=(id,k)=>k==='dst'?(dstCol.get(id)||0):k==='zz'?ZZL[Math.min(3,layerOf.get(id)||0)]:k==='pl'?PLL[Math.min(3,layerOf.get(id)||0)]:(DEFK[k]||0);
-const layerP=new Map(),layerSide=new Map(),layerOn=new Map();
-const layerIs=(l,k)=>k==='pl'?(l===0||layerOn.get(l+':pl')===true):k==='zz'?layerOn.get(l+':zz')!==false:true;
-const layerOfId=id=>{const o=objList.find(x=>x.id===id);return o?(o.layer||0):0};
-const sideOf=(id,k)=>itemSide.has(id+':'+k)?itemSide.get(id+':'+k):layerSide.has(layerOfId(id)+':'+k)?layerSide.get(layerOfId(id)+':'+k):(k==='zz'&&innerSet.has(id)?1:0);
+const defCol=(id,k)=>k==='dst'?(dstCol.get(id)||0):k==='zz'?ZZL[Math.min(3,layerOf.get(id)||0)]:(DEFK[k]||0);
+const sideOf=(id,k)=>itemSide.has(id+':'+k)?itemSide.get(id+':'+k):(k==='zz'&&innerSet.has(id)?1:0);
 let manualOrder=null,selObj=null,objList=[],objBox=new Map(),fileStem='';
 const itemC=new Map(),itemOff=new Set(),itemSide=new Map(),itemP=new Map();
-const apOvM=(V,o)=>{const m=+V.apMode;return m===1?100:m===2?((o.layer||0)===0?140:100):m===3?140:+V.zzO};
-const ip=(o,k,f,dflt)=>{let v=itemP.get(o.id+':'+k+':'+f);if(v===undefined)v=layerP.get((o.layer||0)+':'+k+':'+f);return v===undefined?dflt:v};
+const ip=(o,k,f,dflt)=>{const v=itemP.get(o.id+':'+k+':'+f);return v===undefined?dflt:v};
 const SIDE_OPTS=[[0,'Auto side'],[1,'Flip all'],[2,'Flip outline'],[3,'Flip holes']];
-const widthIn=(id,k)=>{const g=k==='zz'?['zzW','zzO','zzD']:['stW','stO','stD'],dv=itemP.get(id+':'+k+':d'),po=objList.find(x=>x.id===id),ph=k==='zz'&&po?apOvM({apMode:getV('apMode'),zzO:getV('zzO')},po):getV(g[1]),w=itemP.get(id+':'+k+':w'),o=itemP.get(id+':'+k+':ov'),ly=layerOfId(id),lw=layerP.get(ly+':'+k+':w'),lo=layerP.get(ly+':'+k+':ov'),ld=layerP.get(ly+':'+k+':d');
-  return `<label class="ipl" title="Width in mm for this stitch only. Leave blank to use the setting">W<input type="number" class="ip" data-act="ipw" data-k="${k}" min="0.5" max="20" step="0.1" placeholder="${lw===undefined?getV(g[0]):lw}" value="${w===undefined?'':w}"></label><label class="ipl" title="Overlap % for this stitch only. Leave blank to use the setting. Above 100 keeps the stitches off the edge">Ov<input type="number" class="ip" data-act="ipo" data-k="${k}" min="0" max="200" step="1" placeholder="${lo===undefined?ph:lo}" value="${o===undefined?'':o}"></label><label class="ipl" title="Density for this stitch only, in the unit chosen in the settings. Leave blank to use the setting">D<input type="number" class="ip" data-act="ipd" data-k="${k}" min="0.1" max="500" step="any" placeholder="${ld===undefined?getV(g[2]):ld}" value="${dv===undefined?'':dv}"></label>`};
+const widthIn=(id,k)=>{const g=k==='zz'?['zzW','zzO']:['stW','stO'],w=itemP.get(id+':'+k+':w'),o=itemP.get(id+':'+k+':ov');
+  return `<label class="ipl" title="Width in mm for this stitch only. Leave blank to use the setting">W<input type="number" class="ip" data-act="ipw" data-k="${k}" min="0.5" max="20" step="0.1" placeholder="${getV(g[0])}" value="${w===undefined?'':w}"></label><label class="ipl" title="Overlap % for this stitch only. Leave blank to use the setting. Above 100 keeps the stitches off the edge">Ov<input type="number" class="ip" data-act="ipo" data-k="${k}" min="0" max="200" step="1" placeholder="${getV(g[1])}" value="${o===undefined?'':o}"></label>`};
 const sideSel=(id,k)=>`<select class="sidesel" data-act="side" data-k="${k}" title="Which side of the outline this stitch sits on" aria-label="Tack side of ${NAMES[k]}">${SIDE_OPTS.map(([v,t])=>`<option value="${v}"${sideOf(id,k)===v?' selected':''}>${t}</option>`).join('')}</select>`;
-let threadOrder=THR0.slice(),activeKs=[];
+let threadOrder=[...Array(12).keys()],activeKs=[];
 const icol=(id,k)=>itemC.has(id+':'+k)?itemC.get(id+':'+k):(st(id).color!==null?st(id).color:defCol(id,k));
 const setShape=(id,c)=>{st(id).color=c;[...itemC.keys()].forEach(x=>{if(x.startsWith(id+':'))itemC.delete(x)})};
 const rank=c=>threadOrder.indexOf(c);
@@ -1318,7 +1288,7 @@ let fabL=(()=>{try{const v=JSON.parse(localStorage.getItem('tack2fab')||'null');
 const fabO=new Map();let fills=[],_tw=null;
 const fabOf=o=>fabO.get(o.id)||fabL[Math.min(o.layer||0,3)];
 const twillPat=g=>{if(_tw!==null)return _tw;_tw=undefined;try{const c=document.createElement('canvas');c.width=c.height=8;const x=c.getContext('2d');if(!x)return _tw;x.lineWidth=1.3;x.strokeStyle='rgba(255,255,255,.14)';x.beginPath();x.moveTo(-1,9);x.lineTo(9,-1);x.moveTo(-1,1);x.lineTo(1,-1);x.moveTo(7,9);x.lineTo(9,7);x.stroke();x.strokeStyle='rgba(0,0,0,.12)';x.beginPath();x.moveTo(-1,5);x.lineTo(5,-1);x.moveTo(3,9);x.lineTo(9,3);x.stroke();_tw=g.createPattern(c,'repeat')||undefined}catch(e){}return _tw};
-const resetSeq=()=>{layerOn.clear();layerP.clear();layerSide.clear();fabO.clear();itemP.clear();itemSide.clear();itemC.clear();itemOff.clear();threadOrder=THR0.slice();objState.clear();manualOrder=null;selObj=null;objList=[];objBox=new Map()};
+const resetSeq=()=>{fabO.clear();itemP.clear();itemSide.clear();itemC.clear();itemOff.clear();threadOrder=[...Array(12).keys()];objState.clear();manualOrder=null;selObj=null;objList=[];objBox=new Map()};
 const colOf=g=>$('vt').checked?PAL[g.col||0]:COL[g.k];
 /* split the outlines into shapes: a letter and its counters travel together */
 let penModeNow=false;
@@ -1391,22 +1361,10 @@ function renderSeq(){
     const big=ps.reduce((m,x)=>x.w*x.h>m.w*m.h?x:m,ps[0]);
     const pcs=ps.map(x=>{
       const lab=x.label||(ps.length>1?(x.layer===0?'Base layer':x.layer===1?'Top layer':'Layer '+(x.layer+1)):'');
-      return `<div class="pcs" data-pid="${x.id}">${lab?`<span class="plab">${lab}</span>`:''}${stitchSrc?'':`<label class="fabsw" title="Fabric color of this piece"><input type="color" data-act="fab" value="${fabOf(x)}" aria-label="Fabric color of ${esc(nm)}${lab?' '+lab:''}">Fabric</label>`}<span class="sub">${activeKs.map(k=>`<span class="ic${(itemOff.has(x.id+':'+k)||!layerIs(x.layer||0,k))?' off':''}"${!layerIs(x.layer||0,k)?' title="Off for this layer in Layer settings"':''}><input type="checkbox" data-act="ion" data-k="${k}"${itemOff.has(x.id+':'+k)?'':' checked'} aria-label="Include ${NAMES[k]} of ${esc(nm)}${lab?' '+lab:''}"><button type="button" class="sw s" data-act="icol" data-k="${k}" style="background:${PAL[icol(x.id,k)]}" title="${NAMES[k]}: thread ${icol(x.id,k)+1}" aria-label="Thread color of ${NAMES[k]}${lab?' '+lab:''} of ${esc(nm)}"></button>${NAMES[k]}${k==='pl'||k==='dst'?'':sideSel(x.id,k)}${(k==='zz'||k==='st')?widthIn(x.id,k):''}</span>`).join('')}</span></div>`}).join('');
+      return `<div class="pcs" data-pid="${x.id}">${lab?`<span class="plab">${lab}</span>`:''}${stitchSrc?'':`<label class="fabsw" title="Fabric color of this piece"><input type="color" data-act="fab" value="${fabOf(x)}" aria-label="Fabric color of ${esc(nm)}${lab?' '+lab:''}">Fabric</label>`}<span class="sub">${activeKs.map(k=>`<span class="ic${(itemOff.has(x.id+':'+k)||(k==='pl'&&+getV('plLayers')===1&&x.layer>0))?' off':''}"${k==='pl'&&+getV('plLayers')===1&&x.layer>0?' title="Hidden: placement is set to base layer only"':''}><input type="checkbox" data-act="ion" data-k="${k}"${itemOff.has(x.id+':'+k)?'':' checked'} aria-label="Include ${NAMES[k]} of ${esc(nm)}${lab?' '+lab:''}"><button type="button" class="sw s" data-act="icol" data-k="${k}" style="background:${PAL[icol(x.id,k)]}" title="${NAMES[k]}: thread ${icol(x.id,k)+1}" aria-label="Thread color of ${NAMES[k]}${lab?' '+lab:''} of ${esc(nm)}"></button>${NAMES[k]}${k==='pl'||k==='dst'?'':sideSel(x.id,k)}${(k==='zz'||k==='st')?widthIn(x.id,k):''}</span>`).join('')}</span></div>`}).join('');
     return `<div class="orow${selObj===Lt.id?' sel':''}${on?'':' off'}" draggable="true" data-id="${Lt.id}"><span class="grip" aria-hidden="true">⋮⋮</span><span class="num">${i+1}</span><button type="button" class="sw" data-act="col" style="background:${PAL[sc===undefined?0:sc]}" title="${sc===undefined?'Colors by stitch type. Click to set the whole shape':'Thread '+(sc+1)+'. Click to change'}" aria-label="Change thread color of ${esc(nm)}"></button><span class="oname">${esc(nm)}<small>${big.w.toFixed(1)} × ${big.h.toFixed(1)} mm${ps.length>1?' · '+ps.length+' layers':''}${holes?' · '+holes+' hole'+(holes>1?'s':''):''}</small></span><label class="oon" title="Include in stitching"><input type="checkbox" data-act="on"${on?' checked':''} aria-label="Include ${esc(nm)}"></label><button type="button" class="mv" data-act="up" aria-label="Move ${esc(nm)} up">↑</button><button type="button" class="mv" data-act="dn" aria-label="Move ${esc(nm)} down">↓</button>${pcs}<span class="sub bsub"><label>Name <input type="text" class="nm" data-act="name" value="${esc(nm)}" maxlength="40" aria-label="File name of ${esc(nm)}"></label><label>Copies <input type="number" class="cp" data-act="copies" min="1" max="60" step="1" placeholder="${esc(String(getV('bDef')))}" value="${cp}" aria-label="Copies of ${esc(nm)}"></label><label class="ic"><input type="checkbox" data-act="appr"${appr?' checked':''} aria-label="Approve ${esc(nm)}"> Approved</label></span></div>`;
   }).join(''):'<p class="hint">Load a file to see its shapes here.</p>';
   const T=$('thr');
-  {const LS=$('layset'),LH=$('laysetHint');
-   if(LS){
-    const nl=objList.length?Math.max(...objList.map(o=>o.layer||0))+1:0,ks=activeKs.filter(k=>k==='zz'||k==='st');
-    if(!nl||stitchSrc){LS.innerHTML='';if(LH)LH.textContent=''}
-    else{
-     const V0={apMode:getV('apMode'),zzO:getV('zzO')},nm=i=>'Layer '+(i+1)+(i===0?' (base)':''),plOn=!!getV('pl');
-     LS.innerHTML=[...Array(nl).keys()].map(i=>`<div class="lrow" data-layer="${i}"><b>${nm(i)}</b><label class="ipl" title="${i===0?'The base layer always gets a placement stitch when Placement stitching is on':'Add a placement stitch to this layer'}"><input type="checkbox" data-lact="on" data-k="pl"${layerIs(i,'pl')&&plOn?' checked':''}${i===0||!plOn?' disabled':''} aria-label="${nm(i)} placement stitch">Placement</label><label class="ipl" title="Turn the zigzag on or off for this layer"><input type="checkbox" data-lact="on" data-k="zz"${layerIs(i,'zz')?' checked':''} aria-label="${nm(i)} zigzag">Zigzag</label><label class="ipl" title="Stitch only the outer edge of this layer's pieces and leave the zigzag out of their holes (counters)"><input type="checkbox" data-lact="on" data-k="nohole"${layerOn.get(i+':nohole')===true?' checked':''} aria-label="${nm(i)} remove hole zigzag">Remove hole</label>`+ks.map(k=>{
-       const g=k==='zz'?['zzW','zzO','zzD']:['stW','stO','stD'],val=f=>{const v=layerP.get(i+':'+k+':'+f);return v===undefined?'':v},ovPh=k==='zz'?apOvM(V0,{layer:i}):getV(g[1]),sd=layerSide.has(i+':'+k)?layerSide.get(i+':'+k):'';
-       return `<span class="lk">${NAMES[k]}<label class="ipl">W<input type="number" class="ip" data-lact="w" data-k="${k}" min="0.5" max="20" step="0.1" placeholder="${getV(g[0])}" value="${val('w')}" aria-label="${nm(i)} ${NAMES[k]} width"></label><label class="ipl">Ov<input type="number" class="ip" data-lact="ov" data-k="${k}" min="0" max="200" step="1" placeholder="${ovPh}" value="${val('ov')}" aria-label="${nm(i)} ${NAMES[k]} overlap"></label><label class="ipl">D<input type="number" class="ip" data-lact="d" data-k="${k}" min="0.1" max="500" step="any" placeholder="${getV(g[2])}" value="${val('d')}" aria-label="${nm(i)} ${NAMES[k]} density"></label><select class="sidesel" data-lact="side" data-k="${k}" aria-label="${nm(i)} ${NAMES[k]} side"><option value="">side…</option>${SIDE_OPTS.map(([v,t])=>`<option value="${v}"${String(sd)===String(v)?' selected':''}>${t}</option>`).join('')}</select></span>`}).join('')+`<button type="button" class="alt" data-lact="clear" title="Clear this layer's settings and any per-piece changes on it">Clear</button></div>`).join('');
-     if(LH)LH.textContent='Tick Placement to give a layer its own placement stitch (the base layer always has one when Placement stitching is on), and untick Zigzag to leave a layer without one. Width, overlap and density typed here apply to every shape on that layer. Leave a box blank to use the main setting. A box in a shape\'s own row below changes just that piece.';
-    }
-   }}
   if(T){
     const used=usedCols.length?usedCols:[0];
     T.innerHTML='<div class="allk">'+activeKs.map(k=>`<span class="ic">All ${NAMES[k].toLowerCase()}<button type="button" class="sw s" data-act="allk" data-k="${k}" style="background:#444" title="Set the color of every ${NAMES[k].toLowerCase()} stitch" aria-label="Set color of all ${NAMES[k]}">?</button>${k==='pl'||k==='dst'?'':`<select class="sidesel" data-act="allside" data-k="${k}" aria-label="Set tack side of all ${NAMES[k]}"><option value="">side…</option>${SIDE_OPTS.map(([v,t])=>`<option value="${v}">${t}</option>`).join('')}</select>`}</span>`).join('')+'</div>'+used.map((c,i)=>`<div class="trow" data-c="${c}"><span class="num">${i+1}</span><span class="sw" style="background:${PAL[c]}"></span><span class="oname">Thread ${c+1}</span><button type="button" class="mv" data-act="tup" aria-label="Run thread ${c+1} earlier">↑</button><button type="button" class="mv" data-act="tdn" aria-label="Run thread ${c+1} later">↓</button></div>`).join('');
@@ -1442,29 +1400,14 @@ function wireSeq(){
     const used=usedCols,ui=used.indexOf(c),oc=used[ui+(a==='tup'?-1:1)];if(oc===undefined)return;
     const j=threadOrder.indexOf(oc);threadOrder[i]=oc;threadOrder[j]=c;rebuild();
   });
-  $('layset').addEventListener('change',e=>{
-    const t=e.target,a=t.dataset.lact,row=t.closest('.lrow');if(!a||!row||a==='clear')return;
-    const ly=+row.dataset.layer,k=t.dataset.k;
-    if(a==='on'){layerOn.set(ly+':'+k,t.checked);rebuild();return}
-    if(a==='side'){if(t.value==='')layerSide.delete(ly+':'+k);else layerSide.set(ly+':'+k,+t.value);rebuild();return}
-    const key=ly+':'+k+':'+a;
-    if(t.value===''||isNaN(+t.value))layerP.delete(key);else layerP.set(key,a==='w'?Math.max(0.5,Math.min(20,+t.value)):a==='d'?Math.max(0.1,Math.min(500,+t.value)):Math.max(0,Math.min(200,+t.value)));
-    rebuild();
-  });
-  $('layset').addEventListener('click',e=>{
-    const t=e.target;if(t.dataset.lact!=='clear')return;const ly=+t.closest('.lrow').dataset.layer;
-    [...layerP.keys()].forEach(x=>{if(x.startsWith(ly+':'))layerP.delete(x)});[...layerSide.keys()].forEach(x=>{if(x.startsWith(ly+':'))layerSide.delete(x)});[...layerOn.keys()].forEach(x=>{if(x.startsWith(ly+':'))layerOn.delete(x)});
-    objList.filter(o=>(o.layer||0)===ly).forEach(o=>{[...itemP.keys()].forEach(x=>{if(x.startsWith(o.id+':'))itemP.delete(x)});[...itemSide.keys()].forEach(x=>{if(x.startsWith(o.id+':'))itemSide.delete(x)})});
-    rebuild();
-  });
   L.addEventListener('change',e=>{
     const t=e.target,a=t.dataset.act;
     if(a==='name'||a==='copies'){const row=t.closest('.orow'),ps=piecesOf(+row.dataset.id);
       if(a==='name'){const v=t.value.trim()||null;ps.forEach(o=>{st(o.id).name=v;if(v)o.name=v});renderSeq()}
       else{const v=Math.round(+t.value),c=v>=1?Math.min(60,v):null;ps.forEach(o=>st(o.id).copies=c);renderSeq()}return}
     if(a==='appr'){piecesOf(+t.closest('.orow').dataset.id).forEach(o=>st(o.id).appr=t.checked);return}
-    if(a==='ipw'||a==='ipo'||a==='ipd'){const pc=t.closest('.pcs');if(!pc)return;const key=pc.dataset.pid+':'+t.dataset.k+':'+(a==='ipw'?'w':a==='ipd'?'d':'ov');
-      if(t.value===''||isNaN(+t.value))itemP.delete(key);else itemP.set(key,a==='ipw'?Math.max(0.5,Math.min(20,+t.value)):a==='ipd'?Math.max(0.1,Math.min(500,+t.value)):Math.max(0,Math.min(200,+t.value)));rebuild();return}
+    if(a==='ipw'||a==='ipo'){const pc=t.closest('.pcs');if(!pc)return;const key=pc.dataset.pid+':'+t.dataset.k+':'+(a==='ipw'?'w':'ov');
+      if(t.value===''||isNaN(+t.value))itemP.delete(key);else itemP.set(key,a==='ipw'?Math.max(0.5,Math.min(20,+t.value)):Math.max(0,Math.min(200,+t.value)));rebuild();return}
     if(t.dataset.act!=='side')return;const pc=t.closest('.pcs');if(!pc)return;
     itemSide.set(+pc.dataset.pid+':'+t.dataset.k,+t.value);rebuild();
   });
@@ -1784,13 +1727,12 @@ function rebuild(){
   const passes=[];
   if(V.pl)passes.push(['pl',p=>placeRun(p,+V.plLen||3,+V.plLen||3,1)]);
   if(V.td)passes.push(['td',(p,s)=>runStitch(offsetPoly(p,V.tdIn,s,3),V.pSeg?V.tdMin:0,V.tdMax||3)]);
-  if(V.zz)passes.push(['zz',(p,s,o)=>column(p,{w:ip(o,'zz','w',V.zzW),d:ip(o,'zz','d',V.zzD),du:V.denU,ov:ip(o,'zz','ov',apOvM(V,o)),sg:s,corner:true,short:false,ext:false,cont:V.zzC,clip:V.zzClip,cor:V.zzCor,ang:V.zzAng,seamOv:V.lkHide?2.5:0,curveDens:V.curveD,cornerDens:V.zzCd})]);
-  if(V.st)passes.push(['st',(p,s,o)=>column(p,{w:ip(o,'st','w',V.stW),d:ip(o,'st','d',V.stD),du:V.denU,ov:ip(o,'st','ov',V.stO),sg:s,corner:V.stCorner,short:V.stShort,ext:V.stExt,cont:false,clip:false,satin:true,cor:V.stCor,ang:V.stAng,seamOv:V.lkHide?2.5:0,curveDens:V.curveD})]);
+  if(V.zz)passes.push(['zz',(p,s,o)=>column(p,{w:ip(o,'zz','w',V.zzW),d:V.zzD,du:V.denU,ov:ip(o,'zz','ov',V.zzO),sg:s,corner:true,short:false,ext:false,cont:V.zzC,clip:V.zzClip,cor:V.zzCor,ang:V.zzAng,seamOv:V.lkHide?2.5:0,curveDens:V.curveD,cornerDens:V.zzCd})]);
+  if(V.st)passes.push(['st',(p,s,o)=>column(p,{w:ip(o,'st','w',V.stW),d:V.stD,du:V.denU,ov:ip(o,'st','ov',V.stO),sg:s,corner:V.stCorner,short:V.stShort,ext:V.stExt,cont:false,clip:false,satin:true,cor:V.stCor,ang:V.stAng,seamOv:V.lkHide?2.5:0,curveDens:V.curveD})]);
   groups=[];usedCols=[];let cur=[0,0];
   const emit=(k,fn,o,stopFirst)=>{
     let first=stopFirst;
     o.paths.forEach((p,pi)=>{
-      if(pi>0&&k==='zz'&&layerOn.get((o.layer||0)+':nohole')===true)return;
       let s=sgById.get(p.id);const fm=sideOf(o.id,k);
       if(fm===1||(fm===2&&pi===0)||(fm===3&&pi>0))s=-s;
       let pts=fn(p,s,o);
@@ -1807,7 +1749,7 @@ function rebuild(){
     });
   };
   activeKs=passes.map(x=>x[0]);
-  const live=(o,k)=>st(o.id).on&&!itemOff.has(o.id+':'+k)&&layerIs(o.layer||0,k);
+  const live=(o,k)=>st(o.id).on&&!itemOff.has(o.id+':'+k)&&!(k==='pl'&&+V.plLayers===1&&o.layer>0);
   if(V.seqPass===2){
     const items=[];
     passes.forEach(([k,fn],pi)=>firstObjs.forEach((o,oi)=>{if(live(o,k))items.push({o,k,fn,pi,oi,c:icol(o.id,k)})}));
@@ -1949,9 +1891,11 @@ function draw(){
       const ps=f.paths.filter(p=>p.length>2);if(!ps.length||!isClosed(ps[0]))return;
       g.save();g.beginPath();
       ps.forEach(p=>{p.forEach((q,i)=>{const t=T(q);i?g.lineTo(t[0],t[1]):g.moveTo(t[0],t[1])});g.closePath()});
+      if(f.o.layer>0){g.shadowColor='#0008';g.shadowBlur=10*dpr;g.shadowOffsetY=3*dpr}
       g.fillStyle=fabOf(f.o);g.fill('evenodd');
       g.shadowColor='transparent';g.shadowBlur=0;g.shadowOffsetY=0;
-      g.restore();
+      const pat=twillPat(g);if(pat){g.fillStyle=pat;g.fill('evenodd')}
+      g.lineWidth=1.2*dpr;g.strokeStyle='#00000066';g.stroke();g.restore();
     });
   }
   }
@@ -2197,60 +2141,19 @@ function expBytes(gs=groups){
   gs.forEach((gr,gi)=>{if(gr.stop)r.push(0x80,0x01,0,0);else if(gi>0&&(gr.trim||(getV('trimLk')&&getV('lk')&&!stitchSrc)||(TM>0&&dist(last(gs[gi-1].pts),gr.pts[0])>TM)))r.push(0x80,0x02,0,0);;gr.pts.forEach((q,i)=>go(Math.round(q[0]*10),Math.round(q[1]*10),i===0))});
   if(getV('ret'))go(0,0,true);r.push(0x80,0x10,0,0);return new Uint8Array(r);
 }
-/* vector artwork: what is on screen (fabric, thread colours, and the view options that are ticked), drawn as real vector shapes in mm */
-const THREAD_MM=0.45;
-function artData(){
-  const A={fills:[],st:[],jumps:[],cut:[]};
-  if($('vf').checked)[...fills].sort((a,b)=>a.o.layer-b.o.layer).forEach(f=>{const ps=f.paths.filter(p=>p.length>2);if(ps.length&&isClosed(ps[0]))A.fills.push({ps,col:fabOf(f.o)})});
-  groups.forEach(g=>{if(g.pts.length>1)A.st.push({pts:g.pts,col:colOf(g)})});
-  if($('vj').checked)for(let i=1;i<groups.length;i++)A.jumps.push([last(groups[i-1].pts),groups[i].pts[0]]);
-  if($('vc').checked)A.cut=mm.filter(p=>p.length>1);
-  let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;const bb=q=>{x0=Math.min(x0,q[0]);x1=Math.max(x1,q[0]);y0=Math.min(y0,q[1]);y1=Math.max(y1,q[1])};
-  A.fills.forEach(f=>f.ps.forEach(p=>p.forEach(bb)));A.st.forEach(g=>g.pts.forEach(bb));A.cut.forEach(p=>p.forEach(bb));
-  if(x0>x1)return null;
-  const m=2;A.x0=x0-m;A.y0=y0-m;A.x1=x1+m;A.y1=y1+m;return A;
-}
 function svgText(){
-  const A=artData();if(!A)return'';
-  const n=v=>(+v).toFixed(2),pt=q=>n(q[0])+','+n(-q[1]),pl=(p,a)=>'<polyline fill="none" '+a+' points="'+p.map(pt).join(' ')+'"/>',
-    d=ps=>ps.map(p=>'M'+p.map(pt).join('L')+'Z').join('');
-  const W=A.x1-A.x0,H=A.y1-A.y0;
-  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="'+[n(A.x0),n(-A.y1),n(W),n(H)].join(' ')+'" width="'+n(W)+'mm" height="'+n(H)+'mm">'
-   +(A.fills.length?'<g id="Fabric">'+A.fills.map(f=>'<path d="'+d(f.ps)+'" fill="'+f.col+'" fill-rule="evenodd"/>').join('')+'</g>':'')
-   +'<g id="Stitches" stroke-linecap="round" stroke-linejoin="round">'+A.st.map(g=>pl(g.pts,'stroke="'+g.col+'" stroke-width="'+THREAD_MM+'"')).join('')+'</g>'
-   +(A.jumps.length?'<g id="Jumps">'+A.jumps.map(j=>pl(j,'stroke="#fff" stroke-opacity="0.4" stroke-width="0.15" stroke-dasharray="0.8 1.2"')).join('')+'</g>':'')
-   +(A.cut.length?'<g id="CutLines">'+A.cut.map(p=>pl(p,'stroke="#f4f7f5" stroke-width="0.25" stroke-dasharray="1.5 1"')).join('')+'</g>':'')
-   +'</svg>';
-}
-function pdfBlob(){
-  const A=artData();if(!A)return null;
-  const S=72/25.4,f=v=>(+v).toFixed(3),rgb=h=>{h=h.replace('#','');return[0,2,4].map(i=>f(parseInt(h.substr(i,2),16)/255)).join(' ')},
-    W=(A.x1-A.x0)*S,H=(A.y1-A.y0)*S,mv=p=>p.map((q,i)=>f(q[0])+' '+f(q[1])+(i?' l':' m')).join('\n');
-  let c=f(S)+' 0 0 '+f(S)+' '+f(-A.x0*S)+' '+f(-A.y0*S)+' cm\n1 J 1 j\n';
-  A.fills.forEach(fl=>{
-    const path=fl.ps.map(p=>mv(p)+'\nh').join('\n');
-    c+=rgb(fl.col)+' rg\n'+path+'\nf*\n';
-  });
-  c+=THREAD_MM+' w\n';
-  A.st.forEach(g=>{c+=rgb(g.col)+' RG\n'+mv(g.pts)+'\nS\n'});
-  if(A.jumps.length){c+='/G3 gs\n1 1 1 RG 0.15 w [0.8 1.2] 0 d\n';A.jumps.forEach(j=>{c+=mv(j)+'\nS\n'});c+='[] 0 d\n/G0 gs\n'}
-  if(A.cut.length){c+='0.957 0.969 0.961 RG 0.25 w [1.5 1] 0 d\n';A.cut.forEach(p=>{c+=mv(p)+'\nS\n'});c+='[] 0 d\n'}
-  const o=[];
-  o[1]='<< /Type /Catalog /Pages 2 0 R >>';
-  o[2]='<< /Type /Pages /Kids [3 0 R] /Count 1 >>';
-  o[3]='<< /Type /Page /Parent 2 0 R /MediaBox [0 0 '+f(W)+' '+f(H)+'] /Contents 4 0 R /Resources << /ExtGState << /G0 << /CA 1 /ca 1 >> /G1 << /CA 0.1 /ca 0.1 >> /G2 << /CA 0.4 /ca 0.4 >> /G3 << /CA 0.4 /ca 0.4 >> >> >> >>';
-  o[4]='<< /Length '+c.length+' >>\nstream\n'+c+'\nendstream';
-  let out='%PDF-1.4\n',off=[];
-  for(let i=1;i<=4;i++){off[i]=out.length;out+=i+' 0 obj\n'+o[i]+'\nendobj\n'}
-  const xr=out.length;out+='xref\n0 5\n0000000000 65535 f \n'+[1,2,3,4].map(i=>String(off[i]).padStart(10,'0')+' 00000 n \n').join('')+'trailer\n<< /Size 5 /Root 1 0 R >>\nstartxref\n'+xr+'\n%%EOF\n';
-  const u=new Uint8Array(out.length);for(let i=0;i<out.length;i++)u[i]=out.charCodeAt(i)&255;
-  return new Blob([u],{type:'application/pdf'});
+  let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;
+  groups.forEach(g=>g.pts.forEach(q=>{x0=Math.min(x0,q[0]);x1=Math.max(x1,q[0]);y0=Math.min(y0,q[1]);y1=Math.max(y1,q[1])}));
+  const pl=(p,a)=>'<polyline fill="none" '+a+' points="'+p.map(q=>q[0].toFixed(2)+','+(-q[1]).toFixed(2)).join(' ')+'"/>';
+  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="'+[x0-2,-y1-2,x1-x0+4,y1-y0+4].join(' ')+'" width="'+(x1-x0+4)+'mm" height="'+(y1-y0+4)+'mm">'
+   +mm.map(p=>pl(p,'stroke="#999" stroke-width=".2" stroke-dasharray="1 1"')).join('')
+   +groups.map(g=>pl(g.pts,'stroke="'+PAL[g.col||0]+'" stroke-width=".15"')).join('')+'</svg>';
 }
 const save=(data,name)=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([data]));a.download=name;a.click()};
 
 /* wiring */
 function load(txt,name){ // HPGL text (used by the sample and by tests)
-  try{paths=importHPGL(txt);stitchSrc=null;resetSeq();needFit=true;fileStem=name?safeName(name):'';outName=safeName(name);['dl','dlx','dls','dlf'].forEach(i=>$(i).disabled=false);$('msg').textContent='Loaded '+(name||'file')+'.';rebuild()}
+  try{paths=importHPGL(txt);stitchSrc=null;resetSeq();needFit=true;fileStem=name?safeName(name):'';outName=safeName(name);['dl','dlx','dls'].forEach(i=>$(i).disabled=false);$('msg').textContent='Loaded '+(name||'file')+'.';rebuild()}
   catch(e){$('msg').textContent=e.message}
 }
 $('file').addEventListener('change',e=>{handleFiles(e.target.files);e.target.value=''});
@@ -2292,7 +2195,6 @@ $('fh').addEventListener('click',()=>{$('fx').checked=!$('fx').checked;fire('fx'
 $('fv').addEventListener('click',()=>{$('fy').checked=!$('fy').checked;fire('fy')});
 $('dl').addEventListener('click',()=>{save(dstBytes(),outName+'.dst');$('msg').textContent='Downloaded '+outName+'.dst. Open it in your embroidery software to check before stitching.'});
 $('dlx').addEventListener('click',()=>save(expBytes(),outName+'.exp'));
-$('dls').addEventListener('click',()=>{const t=svgText();if(t)save(t,outName+'.svg')});
-$('dlf').addEventListener('click',()=>{const b=pdfBlob();if(b)save(b,outName+'.pdf')});
+$('dls').addEventListener('click',()=>save(svgText(),outName+'.svg'));
 draw();
 </script></body></html>
